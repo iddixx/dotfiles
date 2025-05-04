@@ -32,9 +32,7 @@ local colemak_mappings = {
 
     -- Word left/right
     { modes = { "n", "v", "o", "x" },      lhs = "a",          rhs = "b",      desc = "Word back" },
-    { modes = { "n", "v", "o", "x" },      lhs = "t",          rhs = "w",      desc = "Word forward" },
     { modes = { "n", "v", "o", "x" },      lhs = "A",          rhs = "B",      desc = "WORD back" },
-    { modes = { "n", "v", "o", "x" },      lhs = "T",          rhs = "W",      desc = "WORD forward" },
 
     -- Braces & Brackets movement
     { modes = { "n", "o", "x" },      lhs = "x",          rhs = "%" },
