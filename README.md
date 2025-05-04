@@ -9,16 +9,23 @@
 - dmenu
 - flameshot
 - copyq
+- cava
 - neowofetch
 
 # Deployment
-
-> [!WARNING]
-> It will `rm -rf` all your configs, that conflict with mine.
-> If you value your configurations, don't forget to backup them.
 
 ```bash
 git clone https://github.com/iddixx/dotfiles.git
 cd dotfiles
 ./deploy.d
 ```
+
+> [!WARNING]
+> It will `rm -rf` all your configs, that conflict with mine.
+> If you value your configurations, don't forget to backup them.
+
+> [!NOTE]
+> If you don't want to symlink some of the directories, just remove them.
+> (it won't work with anything specified in `specific_links` in main function in deploy.d)
+
+
