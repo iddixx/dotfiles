@@ -3,7 +3,7 @@
 # for examples
 eval "$(zoxide init bash --cmd cd)"
 
-export PATH=$PATH:/home/caralett/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # If not running interactively, don't do anything
 case $- in
@@ -119,4 +119,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 
-[ -f "/home/caralett/.ghcup/env" ] && . "/home/caralett/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+
