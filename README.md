@@ -9,6 +9,7 @@
 - dmenu
 - flameshot
 - copyq
+- neowofetch
 
 # Deployment
 
