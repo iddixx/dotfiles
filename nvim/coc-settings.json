@@ -1,0 +1,13 @@
+{
+   "rpc.detailsEditing": "In {workspace_folder}"
+  ,"rpc.showProblems": false
+  ,"rpc.lowerDetailsEditing": "Editing {file_name}"
+  ,"rpc.problemsText": " "
+  ,"rpc.detailsViewing": "In {workspace_folder}"
+  ,"rpc.lowerDetailsViewing": "Viewing {file_name}"
+  ,"rpc.lowerDetailsNotFound": "untitled folder"
+  ,"rpc.workspaceElapsedTime": true
+  ,"diagnostic.enable": true
+  ,"clangd.arguments": ["--background-index"]
+  ,"clangd.disableDiagnostics": true
+}
