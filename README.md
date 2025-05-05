@@ -18,6 +18,12 @@
 > It will `rm -rf` all your configs, that conflict with mine.
 > If you don't want this to happen, run `deploy.d` with `--skip-conflicting` flag.
 
+```bash
+git clone https://github.com/iddixx/dotfiles.git
+cd dotfiles
+./deploy.d
+```
+
 > [!NOTE]
 > If you want to link your flatpaks to $HOME/.local/bin, use `--link-flatpaks` flag. 
 
@@ -25,10 +31,6 @@
 > If you don't want to symlink some of the directories, just remove them.
 > (it won't work with anything specified in `specific_links` in main function in deploy.d)
 
-```bash
-git clone https://github.com/iddixx/dotfiles.git
-cd dotfiles
-./deploy.d
-```
+
 
 
