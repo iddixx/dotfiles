@@ -28,6 +28,7 @@ struct conf_s
 
 conf_s get_config()
 {
+    string home_dir = environment.get("HOME", "/home/caralett");
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
         ,specific_links: [
