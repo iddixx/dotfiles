@@ -90,8 +90,8 @@ void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
                 }
                 else
                 {
-                    stderr.writeln(destination ~ " already exists");
-                    exit(1);
+                    writeln("[INFO]: remove-conflicting is false, skipping " ~ entries[i]);
+                    continue;
                 }
             }
             try
@@ -172,4 +172,3 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
-
