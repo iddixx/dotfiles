@@ -6,6 +6,7 @@ import std.path;
 import std.file;
 import std.conv;
 import std.traits;
+import std.getopt;
 import core.stdc.stdlib;
 import std.algorithm.searching;
 import core.sys.posix.sys.types;
@@ -45,6 +46,21 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
 void main(string[] args)
 {
     string home_dir = environment.get("HOME", "/home/caralett");
+
+    bool f_link_flatpaks = false;
+    bool f_skip_conflicting = false;
+
+    auto flags = getopt(args,
+             "link-flatpaks", &f_link_flatpaks
+            ,"skip-conflicting", &f_skip_conflicting
+    );
+
+    if(f_link_flatpaks)
+    {
+        string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
+        link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
+    }
+
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
         ,specific_links: [
@@ -60,7 +76,7 @@ void main(string[] args)
         ,ignored_items: []
     };
 
-    link_all(config);
+    link_all(config, ParameterDefaults!link_all[1], !f_skip_conflicting);
 }
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
@@ -235,3 +251,4 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
+
