@@ -1,5 +1,6 @@
 # Dependencies and requirements
 
+- rdmd(needed to execute deploy.d, usually comes with dmd)
 - nvim v0.10+
 - kitty (i've installed v0.41.1)
 - herbstluftwm (i've installed v0.9.5)
@@ -31,7 +32,6 @@ cd dotfiles
 > [!NOTE]
 > If you don't want to symlink some of the directories, just remove them.
 > (it won't work with anything specified in `specific_links` in `get_config()` in deploy.d)
-
 
 
 
