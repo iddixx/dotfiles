@@ -58,7 +58,6 @@ link[] find_link_by_name(string base_entry_name);
 string[] list_dir_base(string dir);
 string[] list_dir(string dir, bool is_absolute_paths = true);
 string[] list_dir(string dir, out string[] base_names, bool is_absolute_paths = true);
-void recurse_remove_dir(string dir);
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
 {
