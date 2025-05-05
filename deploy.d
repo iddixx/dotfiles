@@ -24,15 +24,25 @@ struct conf_s
     string[] ignored_items;  /* files/directories/symlinks that won't link */
 };
 
-/* you'll need only the 'link_all' function
-   when remove_conflicting is true,
+link[] find_link_by_name(string base_entry_name);
+string[] list_dir_base(string dir);
+string[] list_dir(string dir, bool is_absolute_paths = true);
+string[] list_dir(string dir, out string[] base_names, bool is_absolute_paths = true);
+
+/* when remove_conflicting is true,
    it will remove all the entries with the same name,
    for example: if you link alacritty/ to the .config/,
    but it already has an alacritty directory,
    it will remove it before linking */
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true);
 
-void main()
+/* links flatpaks to the `link_to` directory.
+   if strip_names is true, it links flatpak with stripped name,
+   for example: com.discordorg.Discord, becomes Discord.
+   remove_conflicting  works the same as in `link_all`*/
+void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true);
+
+void main(string[] args)
 {
     string home_dir = environment.get("HOME", "/home/caralett");
     conf_s config = {
@@ -52,12 +62,6 @@ void main()
 
     link_all(config);
 }
-
-
-link[] find_link_by_name(string base_entry_name);
-string[] list_dir_base(string dir);
-string[] list_dir(string dir, bool is_absolute_paths = true);
-string[] list_dir(string dir, out string[] base_names, bool is_absolute_paths = true);
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
 {
@@ -108,6 +112,64 @@ void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
 
 }
 
+string flatpak_name_strip(string name)
+{
+    if(name.empty)
+        return name;
+    string[] result = name.split('.');
+    return result[result.length-1];
+}
+
+void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true)
+{
+    if(!exists(link_to) || !isDir(link_to))
+        return;
+
+    string home_dir = environment.get("HOME", "/home/caralett");
+    string[] flatpak_dirs = [
+         buildNormalizedPath("/", "var", "lib", "flatpak", "exports", "bin")
+        ,buildNormalizedPath(home_dir, ".local", "share", "flatpak", "exports", "bin")
+    ];
+
+    foreach(dir; flatpak_dirs)
+    {
+        if(!exists(dir))
+            continue;
+
+        string[] base_entries = list_dir_base(dir);
+        foreach(entry; base_entries)
+        {
+            string absolute_entry = buildNormalizedPath(dir, entry);
+            string name = entry;
+
+            if(strip_names)
+                name = flatpak_name_strip(name);
+
+            string destination = buildNormalizedPath(link_to, name);
+            if(remove_conflicting)
+            {
+                if(exists(destination))
+                    executeShell("rm -rf " ~ destination);
+            }
+            else
+            {
+                writeln("[INFO]: remove-conflicting is false, skipping " ~ absolute_entry);
+                continue;
+            }
+
+            try
+            {
+                symlink(absolute_entry, destination);
+            }
+            catch(FileException error)
+            {
+                stderr.writeln(error.msg);
+                exit(1);
+            }
+        }
+    }
+}
+
 string[] list_dir(string dir_name, out string[] base_entries, bool is_absolute_paths = true)
 {
     string[] base_names = list_dir_base(dir_name);
@@ -115,6 +177,7 @@ string[] list_dir(string dir_name, out string[] base_entries, bool is_absolute_p
     string[] result;
     foreach(name; base_names)
     {
+        // TODO: make relative and absolute paths, work outside of dotfiles directory
         auto relative_entry_name = "." ~ dirSeparator ~ name;
         if(!is_absolute_paths)
             result[result.length++] = relative_entry_name; 
@@ -139,7 +202,7 @@ string[] list_dir_base(string dir_name)
     DIR* dir = opendir(toStringz(dir_name));
     if(dir == null)
     {
-        stderr.writeln(dir_name ~ " cannot open");
+        stderr.writeln("[ERROR]: cannot open " ~ dir_name);
         exit(1);
     }
 
@@ -156,7 +219,7 @@ string[] list_dir_base(string dir_name)
     
     if(closedir(dir) != 0)
     {
-        stderr.writeln(dir_name ~ " cannot close");
+        stderr.writeln("[ERROR]: cannot close " ~ dir_name);
         exit(1);
     }
 
