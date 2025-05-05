@@ -29,7 +29,7 @@ cd dotfiles
 
 > [!NOTE]
 > If you don't want to symlink some of the directories, just remove them.
-> (it won't work with anything specified in `specific_links` in main function in deploy.d)
+> (it won't work with anything specified in `specific_links` in `get_config()` in deploy.d)
 
 
 

@@ -25,6 +25,26 @@ struct conf_s
     string[] ignored_items;  /* files/directories/symlinks that won't link */
 };
 
+
+conf_s get_config()
+{
+    conf_s config = {
+         default_link_dir: buildNormalizedPath(home_dir, ".config")
+        ,specific_links: [
+            {
+                 from: ".bashrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
+                 from: ".stalonetrayrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+        ]
+        ,ignored_items: []
+    };
+    return config;
+}
+
 link[] find_link_by_name(string base_entry_name);
 string[] list_dir_base(string dir);
 string[] list_dir(string dir, bool is_absolute_paths = true);
@@ -65,22 +85,7 @@ void main(string[] args)
             return;
     }
 
-    conf_s config = {
-         default_link_dir: buildNormalizedPath(home_dir, ".config")
-        ,specific_links: [
-            {
-                 from: ".bashrc"
-                ,to: buildNormalizedPath(home_dir)
-            }
-            ,{
-                 from: ".stalonetrayrc"
-                ,to: buildNormalizedPath(home_dir)
-            }
-        ]
-        ,ignored_items: []
-    };
-
-    link_all(config, ParameterDefaults!link_all[1], !f_skip_conflicting);
+    link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
 }
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
@@ -255,3 +260,4 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
+
