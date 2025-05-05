@@ -253,6 +253,7 @@ hc rule class='pavucontrol' floating=on floatplacement=center
 hc rule class='copyq' focus=on floating=on
 hc rule title='Discord Updater' floating=on floatplacement=center
 hc rule title='Settings' floating=on floatplacement=center
+hc rule title='Friends List' floating=on floatplacement=center
 # class is executable name
 # title is title of the window
 hc rule fixedsize floating=on
