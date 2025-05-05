@@ -25,7 +25,7 @@ cd dotfiles
 ```
 
 > [!NOTE]
-> If you also want to link your flatpaks to $HOME/.local/bin, use `--link-flatpaks` flag. 
+> If you also want to link your flatpaks to `$HOME/.local/bin`, use `--link-flatpaks` flag. 
 > If you want **only** link your flatpaks, use `--only-link-flatpaks` flag.
 
 > [!NOTE]
