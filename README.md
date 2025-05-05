@@ -1,6 +1,6 @@
 # Dependencies and requirements
 
-- rdmd(needed to execute deploy.d, usually comes with dmd)
+- rdmd(needed to execute deploy.d, usually comes with dmd compiler)
 - nvim v0.10+
 - kitty (i've installed v0.41.1)
 - herbstluftwm (i've installed v0.9.5)
