@@ -3,8 +3,8 @@
 # for examples
 eval "$(zoxide init bash --cmd cd)"
 
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/Programming/pythonenv/bin
+export PATH=$HOME/Programming/pythonenv/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # If not running interactively, don't do anything
 case $- in
@@ -121,4 +121,3 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
-
