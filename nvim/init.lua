@@ -54,8 +54,9 @@ local colemak_mappings = {
     { modes = { "n", "o", "x", "v" },      lhs = "dc",         rhs = "\"_x" },
     { modes = { "n", "o", "x", "v" },      lhs = "dC",         rhs = "\"_X" },
     { modes = { "n", "o", "x", "v" },      lhs = "dd",         rhs = "\"_dd" },
-                             
+
     -- fixes                 
+    { modes = { "n", "o", "x", "v" }, lhs = "v",         rhs = "v" },
     { modes = { "n", "o", "x" },      lhs = "ci",         rhs = "\"+ci" },
     { modes = { "n", "o", "x" },      lhs = "cc",         rhs = "\"+cc" },
     { modes = { "n", "o", "x" },      lhs = "yi",         rhs = "\"+yi" },
@@ -67,8 +68,8 @@ local colemak_mappings = {
     { modes = { "n", "o", "x" },      lhs = "va",         rhs = "va" },
     { modes = { "n", "o", "x" },      lhs = "da",         rhs = "\"_da" },
     { modes = { "n", "o", "x" },      lhs = "gd",         rhs = "gd" },
-    { modes = { "o" },      lhs = "i",          rhs = "i" },
-    { modes = { "o" },      lhs = "a",          rhs = "a" },
+    { modes = { "o" },                lhs = "i",          rhs = "i" },
+    { modes = { "o" },                lhs = "a",          rhs = "a" },
 
     -- Undo/redo
     { modes = { "n" },                lhs = "l",          rhs = "u" },
@@ -677,15 +678,15 @@ keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server
-keyset("x", "if", "<Plug>(coc-funcobj-i)", opts)
-keyset("o", "if", "<Plug>(coc-funcobj-i)", opts)
-keyset("x", "af", "<Plug>(coc-funcobj-a)", opts)
-keyset("o", "af", "<Plug>(coc-funcobj-a)", opts)
-keyset("x", "ic", "<Plug>(coc-classobj-i)", opts)
-keyset("o", "ic", "<Plug>(coc-classobj-i)", opts)
-keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
-keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
-
+-- keyset("x", "if", "<Plug>(coc-funcobj-i)", opts)
+-- keyset("o", "if", "<Plug>(coc-funcobj-i)", opts)
+-- keyset("x", "af", "<Plug>(coc-funcobj-a)", opts)
+-- keyset("o", "af", "<Plug>(coc-funcobj-a)", opts)
+-- keyset("x", "ic", "<Plug>(coc-classobj-i)", opts)
+-- keyset("o", "ic", "<Plug>(coc-classobj-i)", opts)
+-- keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
+-- keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
+--
 
 -- Remap  and <C-b> to scroll float windows/popups
 ---@diagnostic disable-next-line: redefined-local
