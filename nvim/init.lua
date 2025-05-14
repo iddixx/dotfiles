@@ -331,6 +331,11 @@ vim.cmd("filetype on")
 vim.cmd("filetype indent on")
 vim.cmd("set t_Co=256")
 vim.cmd("set showcmd!")
+
+-- statusline and command mode things
+vim.opt.cmdheight=0
+vim.opt.laststatus=0
+
 -- vim.cmd("au VimLeave * set guicursor=a:hor100") -- for underline
 vim.cmd("au VimLeave * set guicursor=a:ver100") -- for beam cursor
 -- vim.cmd("au VimLeave * set guicursor=a:block" ) -- for block(you maybe wont need it)
@@ -516,7 +521,8 @@ require('lualine').setup {
       --lualine_y = {},
       --lualine_z = {}
     },
-    tabline = {},
+    tabline = {
+    },
     winbar = {},
     inactive_winbar = {},
     extensions = {}
