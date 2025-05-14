@@ -14,7 +14,6 @@ Getting servername:
 --[[  colemak layout support  ]] --
 -- based on https://github.com/linduxed/colemak.nvim
 local colemak_mappings = {
-
     -- Up/down/left/right
     { modes = { "n", "v", "o", "x" }, lhs = "n",          rhs = "h",      desc = "Left (h)" },
     { modes = { "n", "v", "o", "x" }, lhs = "u",          rhs = "gk",     desc = "Visual Up (gk)" },
@@ -32,10 +31,8 @@ local colemak_mappings = {
     { modes = { "n", "o", "x" }, lhs = "<C-e>",          rhs = "<C-e>",      desc = "Down (j)" },
 
     -- Word left/right
-    { modes = { "n", "x" },      lhs = "a",          rhs = "b",      desc = "Word back" },
-    { modes = { "n", "x" },      lhs = "t",          rhs = "w",      desc = "Word forward" },
-    { modes = { "n", "v" },      lhs = "A",          rhs = "B",      desc = "WORD back" },
-    { modes = { "n", "v" },      lhs = "T",          rhs = "W",      desc = "WORD forward" },
+    { modes = { "n", "v", "o", "x" },      lhs = "a",          rhs = "b",      desc = "Word back" },
+    { modes = { "n", "v", "o", "x" },      lhs = "A",          rhs = "B",      desc = "WORD back" },
 
     -- Braces & Brackets movement
     { modes = { "n", "o", "x" },      lhs = "x",          rhs = "%" },
@@ -53,77 +50,13 @@ local colemak_mappings = {
     { modes = { "n", "o", "x", "v" }, lhs = "y",          rhs = "\"+y" },
     { modes = { "n", "o", "x", "v" }, lhs = "p",          rhs = "\"+p" },
     { modes = { "n", "o", "x", "v" }, lhs = "d",          rhs = "\"_d" },
-    { modes = { "n", "o", "x" },      lhs = "c",          rhs = "\"+c" },
-    { modes = { "n", "o", "x" },      lhs = "dc",         rhs = "\"_x" },
-    { modes = { "n", "o", "x" },      lhs = "dC",         rhs = "\"_X" },
-    { modes = { "n", "o", "x" },      lhs = "dd",         rhs = "\"_dd" },
+    { modes = { "n", "o", "x", "v" },      lhs = "c",          rhs = "\"+c" },
+    { modes = { "n", "o", "x", "v" },      lhs = "dc",         rhs = "\"_x" },
+    { modes = { "n", "o", "x", "v" },      lhs = "dC",         rhs = "\"_X" },
+    { modes = { "n", "o", "x", "v" },      lhs = "dd",         rhs = "\"_dd" },
 
-    -- Surround text --
-
-    -- Surround with brackets
-    { modes = { "n", "o", "x" },      lhs = "siw)",       rhs = "ciw()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw)",       rhs = "caw()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW)",       rhs = "ciW()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW)",       rhs = "caW()<Esc>P" },
-    { modes = { "v" },                lhs = "s)",         rhs = "c()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siw(",       rhs = "ciw()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw(",       rhs = "caw()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW(",       rhs = "ciW()<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW(",       rhs = "caW()<Esc>P" },
-    { modes = { "v" },                lhs = "s(",         rhs = "c()<Esc>P" },
-
-    -- Surround with curly braces
-    { modes = { "n", "o", "x" },      lhs = "siw}",       rhs = "ciw{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw}",       rhs = "caw{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW}",       rhs = "ciW{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW}",       rhs = "caW{}<Esc>P" },
-    { modes = { "v" },                lhs = "s}",         rhs = "c{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siw{",       rhs = "ciw{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw{",       rhs = "caw{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW{",       rhs = "ciW{}<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW{",       rhs = "caW{}<Esc>P" },
-    { modes = { "v" },                lhs = "s{",         rhs = "c{}<Esc>P" },
-
-    -- Surround with square braces
-    { modes = { "n", "o", "x" },      lhs = "siw]",       rhs = "ciw[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw]",       rhs = "caw[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW]",       rhs = "ciW[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW]",       rhs = "caW[]<Esc>P" },
-    { modes = { "v" },                lhs = "s]",         rhs = "c[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siw[",       rhs = "ciw[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw[",       rhs = "caw[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW[",       rhs = "ciW[]<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW[",       rhs = "caW[]<Esc>P" },
-    { modes = { "v" },                lhs = "s[",         rhs = "c[]<Esc>P" },
-
-    -- Surround with angle brackets
-    { modes = { "n", "o", "x" },      lhs = "siw>",       rhs = "ciw<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw>",       rhs = "caw<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW>",       rhs = "ciW<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW>",       rhs = "caW<><Esc>P" },
-    { modes = { "v" },                lhs = "s>",         rhs = "c<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siw<",       rhs = "ciw<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw<",       rhs = "caw<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW<",       rhs = "ciW<><Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW<",       rhs = "caW<><Esc>P" },
-    { modes = { "v" },                lhs = "s<",         rhs = "c<><Esc>P" },
-
-    -- Surround with single quotes
-    { modes = { "n", "o", "x" },      lhs = "siw\'",       rhs = "ciw\'\'<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw\'",       rhs = "caw\'\'<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW\'",       rhs = "ciW\'\'<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW\'",       rhs = "caW\'\'<Esc>P" },
-    { modes = { "v" },                lhs = "s\'",         rhs = "c\'\'<Esc>P" },
-
-    -- Surround with double quotes
-    { modes = { "n", "o", "x" },      lhs = "siw\"",       rhs = "ciw\"\"<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saw\"",       rhs = "caw\"\"<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "siW\"",       rhs = "ciW\"\"<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "saW\"",       rhs = "caW\"\"<Esc>P" },
-    { modes = { "n", "o", "x" },      lhs = "ss\"",        rhs = "cc\"\"<Esc>P" },
-    { modes = { "v" },                lhs = "s\"",         rhs = "c\"\"<Esc>P" },
-
-    -- fixes
+    -- fixes                 
+    { modes = { "n", "o", "x", "v" }, lhs = "v",         rhs = "v" },
     { modes = { "n", "o", "x" },      lhs = "ci",         rhs = "\"+ci" },
     { modes = { "n", "o", "x" },      lhs = "cc",         rhs = "\"+cc" },
     { modes = { "n", "o", "x" },      lhs = "yi",         rhs = "\"+yi" },
@@ -135,6 +68,8 @@ local colemak_mappings = {
     { modes = { "n", "o", "x" },      lhs = "va",         rhs = "va" },
     { modes = { "n", "o", "x" },      lhs = "da",         rhs = "\"_da" },
     { modes = { "n", "o", "x" },      lhs = "gd",         rhs = "gd" },
+    { modes = { "o" },                lhs = "i",          rhs = "i" },
+    { modes = { "o" },                lhs = "a",          rhs = "a" },
 
     -- Undo/redo
     { modes = { "n" },                lhs = "l",          rhs = "u" },
