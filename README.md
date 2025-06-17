@@ -12,6 +12,8 @@
 - copyq
 - cava
 - neowofetch
+- nitrogen
+- redshift
 
 # Deployment
 
