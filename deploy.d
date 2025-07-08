@@ -72,28 +72,30 @@ void main(string[] args)
         writeln("Don't run deploy.d as root!");
         exit(1);
     }
-
-    string home_dir = environment.get("HOME", "/home/domain");
-
-    bool f_link_flatpaks = false;
-    bool f_skip_conflicting = false;
-    bool f_only_link_flatpaks = false;
-
-    auto flags = getopt(args,
-             "link-flatpaks", &f_link_flatpaks
-            ,"only-link-flatpaks", &f_only_link_flatpaks
-            ,"skip-conflicting", &f_skip_conflicting
-    );
-
-    if(f_link_flatpaks || f_only_link_flatpaks)
+    try
     {
-        string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
-        link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
-        if(f_only_link_flatpaks)
-            return;
-    }
+        string home_dir = environment.get("HOME", "/home/domain");
 
-    link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
+        bool f_link_flatpaks = false;
+        bool f_skip_conflicting = false;
+        bool f_only_link_flatpaks = false;
+
+        auto flags = getopt(args,
+                "link-flatpaks", &f_link_flatpaks
+                ,"only-link-flatpaks", &f_only_link_flatpaks
+                ,"skip-conflicting", &f_skip_conflicting
+                );
+
+        if(f_link_flatpaks || f_only_link_flatpaks)
+        {
+            string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
+            link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
+            if(f_only_link_flatpaks)
+                return;
+        }
+
+        link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
+    }
 }
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
@@ -134,6 +136,7 @@ void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
             try
             {
                 symlink(current_entry, destination);
+                writeln("Linked " ~ current_entry ~ " to " ~ destination);
             }
             catch(FileException error)
             {
@@ -194,6 +197,7 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
             try
             {
                 symlink(absolute_entry, destination);
+                writeln("Linked " ~ absolute_entry ~ " to " ~ destination);
             }
             catch(FileException error)
             {
