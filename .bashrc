@@ -3,6 +3,8 @@
 # for examples
 eval "$(zoxide init bash --cmd cd)"
 
+export EDITOR=nvim
+export GITU_SHOW_EDITOR=nvim
 export PATH=$HOME/Programming/pythonenv/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/Programming/builds/llvm-project/build/bin
