@@ -11,6 +11,7 @@ import core.stdc.stdlib;
 import std.algorithm.searching;
 import core.sys.posix.sys.types;
 import core.sys.posix.dirent;
+import core.sys.posix.unistd;
 
 struct link
 {
@@ -28,7 +29,7 @@ struct conf_s
 
 conf_s get_config()
 {
-    string home_dir = environment.get("HOME", "/home/caralett");
+    string home_dir = environment.get("HOME", "/home/domain");
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
         ,specific_links: [
@@ -66,7 +67,7 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
 
 void main(string[] args)
 {
-    string home_dir = environment.get("HOME", "/home/caralett");
+    string home_dir = environment.get("HOME", "/home/domain");
 
     bool f_link_flatpaks = false;
     bool f_skip_conflicting = false;
@@ -151,7 +152,7 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
     if(!exists(link_to) || !isDir(link_to))
         return;
 
-    string home_dir = environment.get("HOME", "/home/caralett");
+    string home_dir = environment.get("HOME", "/home/domain");
     string[] flatpak_dirs = [
          buildNormalizedPath("/", "var", "lib", "flatpak", "exports", "bin")
         ,buildNormalizedPath(home_dir, ".local", "share", "flatpak", "exports", "bin")
@@ -172,6 +173,7 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
                 name = flatpak_name_strip(name);
 
             string destination = buildNormalizedPath(link_to, name);
+
             if(remove_conflicting)
             {
                 if(exists(destination))
@@ -261,4 +263,3 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
-
