@@ -5,7 +5,8 @@ eval "$(zoxide init bash --cmd cd)"
 
 export PATH=$HOME/Programming/pythonenv/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$PATH:/home/caralett/Programming/builds/llvm-project/build/bin
+export PATH=$PATH:$HOME/Programming/builds/llvm-project/build/bin
+export PATH=$PATH:$HOME/Programming/builds/llvm-project/build/bin
 
 # If not running interactively, don't do anything
 case $- in
