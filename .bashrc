@@ -123,3 +123,5 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
