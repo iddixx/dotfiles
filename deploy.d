@@ -67,6 +67,12 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
 
 void main(string[] args)
 {
+    if(geteuid() == 0)
+    {
+        writeln("Don't run deploy.d as root!");
+        exit(1);
+    }
+
     string home_dir = environment.get("HOME", "/home/domain");
 
     bool f_link_flatpaks = false;
@@ -263,3 +269,4 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
+
