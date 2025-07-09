@@ -1,0 +1,8 @@
+pkill -u "$USER" -fx /usr/bin/pipewire-pulse 1>/dev/null 2>&1
+pkill -u "$USER" -fx /usr/bin/wireplumber 1>/dev/null 2>&1
+pkill -u "$USER" -fx /usr/bin/pipewire 1>/dev/null 2>&1
+exec /usr/bin/pipewire &
+while [ "$(pgrep -f /usr/bin/pipewire)" = "" ]; do sleep 1; done
+exec /usr/bin/wireplumber &
+while [ "$(pgrep -f /usr/bin/wireplumber)" = "" ]; do sleep 1; done
+exec /usr/bin/pipewire-pulse &
