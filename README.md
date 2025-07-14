@@ -23,7 +23,6 @@
 - picom
 - maim
 
-
 # Deployment
 
 > [!WARNING]

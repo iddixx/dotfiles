@@ -65,12 +65,12 @@ string[] list_dir(string dir, out string[] base_names, bool is_absolute_paths = 
    for example: if you link alacritty/ to the .config/,
    but it already has an alacritty directory,
    it will remove it before linking */
-void link_all(conf_s config, string from = ".", bool remove_conflicting = true);
+void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true);
 
 /* links flatpaks to the `link_to` directory.
    if strip_names is true, it links flatpak with stripped name,
    for example: com.discordorg.Discord, becomes Discord.
-   remove_conflicting  works the same as in `link_all`*/
+   remove_conflicting  works the same as in `link_by_config`*/
 void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true);
 
 void main(string[] args)
@@ -100,10 +100,10 @@ void main(string[] args)
             return;
     }
 
-    link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
+    link_by_config(get_config(), ParameterDefaults!link_by_config[1], !f_skip_conflicting);
 }
 
-void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
+void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true)
 {
     string[] base_entry_names;
     string[] entries = list_dir(from, base_entry_names);
