@@ -31,6 +31,7 @@ hc keybind Shift-Print spawn flameshot screen -c
 hc keybind Print spawn flameshot gui -c
 hc keybind $Mod-v spawn copyq toggle
 hc keybind $Mod-d spawn dmenu_run -fn 'Iosevka Fixed SS14 SemiBold:pixelsize=23:antialias=true' -nb '#0B1722' -nf '#CECECE' -sb '#71ADE7' -sf '#0B1722' 
+#hc keybind $Mod-c spawn xcolor | xclip-copyfile 
 # keycodes: https://www.cl.cam.ac.uk/~mgk25/ucs/keysymdef.h
 hc keybind $Mod-equal spawn pactl set-sink-volume @DEFAULT_SINK@ +5% 
 hc keybind $Mod-minus spawn pactl set-sink-volume @DEFAULT_SINK@ -5% 
@@ -180,7 +181,7 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
-hc keybind $Mod-c cycle
+#hc keybind $Mod-c cycle
 hc keybind $Mod-j jumpto urgent
 
 # theme
