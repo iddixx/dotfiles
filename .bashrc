@@ -66,7 +66,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:                  \[\033[01;34m\]\w\[\033[00m\]\$ '
-   PS1='${debian_chroot:+($debian_chroot)}(\u@\[\033[1m\]\[\033[38;5;198m\]\h\[\033[00m\] \W):\[\033[0m\] '
+   PS1='${debian_chroot:+($debian_chroot)}(\u@\[\033[1m\]\[\033[38;2;225;127;192m\]\h\[\033[00m\] \W):\[\033[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}(\u@\h \W): '
 fi
@@ -83,16 +83,16 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 #alias ll='ls -l'
@@ -127,3 +127,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH=$PATH:/home/domain/.spicetify
