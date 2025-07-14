@@ -41,6 +41,14 @@ conf_s get_config()
                  from: ".stalonetrayrc"
                 ,to: buildNormalizedPath(home_dir)
             }
+            ,{
+                 from: ".ratpoisonrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
+                 from: ".xsessionrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
         ]
         ,ignored_items: []
     };
@@ -72,30 +80,27 @@ void main(string[] args)
         writeln("Don't run deploy.d as root!");
         exit(1);
     }
-    try
+    string home_dir = environment.get("HOME", "/home/domain");
+
+    bool f_link_flatpaks = false;
+    bool f_skip_conflicting = false;
+    bool f_only_link_flatpaks = false;
+
+    auto flags = getopt(args,
+            "link-flatpaks", &f_link_flatpaks
+            ,"only-link-flatpaks", &f_only_link_flatpaks
+            ,"skip-conflicting", &f_skip_conflicting
+            );
+
+    if(f_link_flatpaks || f_only_link_flatpaks)
     {
-        string home_dir = environment.get("HOME", "/home/domain");
-
-        bool f_link_flatpaks = false;
-        bool f_skip_conflicting = false;
-        bool f_only_link_flatpaks = false;
-
-        auto flags = getopt(args,
-                "link-flatpaks", &f_link_flatpaks
-                ,"only-link-flatpaks", &f_only_link_flatpaks
-                ,"skip-conflicting", &f_skip_conflicting
-                );
-
-        if(f_link_flatpaks || f_only_link_flatpaks)
-        {
-            string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
-            link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
-            if(f_only_link_flatpaks)
-                return;
-        }
-
-        link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
+        string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
+        link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
+        if(f_only_link_flatpaks)
+            return;
     }
+
+    link_all(get_config(), ParameterDefaults!link_all[1], !f_skip_conflicting);
 }
 
 void link_all(conf_s config, string from = ".", bool remove_conflicting = true)
@@ -273,4 +278,3 @@ link[] find_specific_link(link[] links, string base_entry_name)
     }
     return [];
 }
-
