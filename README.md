@@ -6,7 +6,7 @@
 - dmenu
 - copyq
 - cava(optional)
-- neowofetch
+- neowofetch(optional)
 - nitrogen
 - redshift
 ## Herbstluftwm-specific configuration dependencies
