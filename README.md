@@ -17,12 +17,12 @@
 - conky (i've installed v1.22.1)
 - flameshot
 ## Ratpoison-specific configuration dependencies
-- ratpoison
+- ratpoison v1.4.9
 - rpws
 - Iosevka Nerd Font(used in polybar)
-- polybar
+- polybar v3.7.0+
 - unclutter-xfixes
-- picom
+- picom v1.12.0+
 - maim
 
 # Deployment
