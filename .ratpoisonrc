@@ -1,0 +1,201 @@
+# rpws has $wspl environment variable,
+# which equals to current workspace number
+
+startup_message off
+
+set winname title
+
+# unbinding default bindings
+unbind c
+unbind C-c
+unbind C-exclam
+unbind exclam
+unbind k
+unbind C-k
+unbind K
+unbind C-K
+unbind v
+unbind C-v
+unbind V
+unbind C-V
+unbind b
+unbind C-b
+unbind w
+unbind C-w
+unbind A
+unbind C-a
+unbind f
+unbind C-f
+unbind F
+unbind apostrophe
+unbind C-apostrophe
+unbind C-space
+unbind space
+unbind M-Up
+unbind M-Left
+unbind M-Right
+unbind M-Down
+unbind Tab
+unbind M-Tab
+unbind Return
+unbind C-Return
+unbind C-g
+
+# just x is working, swaps windows
+unbind C-x 
+
+# just r is working, resizes windows
+unbind C-r
+
+# cursor auto toggle
+# hides when typing
+# shows up when moving or clicking
+# and hides again in one second of inactivity
+exec unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &
+
+# cool wallpaper
+exec nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ram_bg.png
+
+# creating 8 workspaces
+exec rpws init 8 -k &
+
+# keyboard layout and night light  
+# i change layouts pressing two shifts simultaniousely
+exec sh -c 'sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500'
+
+exec copyq & 
+
+# unmanaging geometry dash
+unmanage steam_app_322170
+# to get that weird polybar name
+# run ``xprop | grep WM_NAME`` command 
+unmanage polybar-ram_eDP
+set padding 0 0 0 32
+exec polybar ram &
+
+exec picom & 
+
+# aliases
+alias exit quit
+alias q quit
+alias h hsplit
+alias v vsplit
+alias hs hsplit
+alias vs vsplit
+alias noop exec :
+
+set wingravity center
+set transgravity center
+set border 3
+set barborder 0
+set msgwait 1
+set framemsgwait 1
+
+set font "Iosevka Fixed SS14 SemiBold-23"
+
+set bgcolor #61325C
+set fgcolor #F7A0CB 
+set fwcolor #F9B7DD
+set bwcolor #000000
+
+set bargravity center
+
+escape Super_L
+
+# to exit command mode 
+bind Escape noop
+
+# terminal
+bind s-S-Return exec kitty
+
+# app launcher
+bind s-Return exec dmenu_run -fn 'Iosevka Fixed SS14 SemiBold:pixelsize=25:antialias=true' -nb '#61325C' -nf '#F7A0CB' -sb '#F9B7DD' -sf '#A853BB' 
+
+# opening clipboard window
+definekey top s-v copyq toggle
+bind v copyq toggle
+
+# maim -s takes screenshot of selected rectangular area
+# maim without any flags, takes screenshot of entire screen
+definekey top S-Print exec maim -s | xclip -selection clipboard -t image/png
+bind P exec maim | xclip -selection clipboard -t image/png
+definekey top Print exec maim -s | xclip -selection clipboard -t image/png
+bind p exec maim -s | xclip -selection clipboard -t image/png
+
+# increasing/decreasing volume
+bind s-equal exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bind s-minus exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bind s-S-equal exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bind s-S-minus exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+
+# moving to workspaces
+bind 1 rpws1
+bind 2 rpws2
+bind 3 rpws3
+bind 4 rpws4
+bind 5 rpws5
+bind 6 rpws6
+bind 7 rpws7
+bind 8 rpws8
+
+# moving windows to workspaces
+bind C-1 rpwsm1
+bind C-2 rpwsm2
+bind C-3 rpwsm3
+bind C-4 rpwsm4
+bind C-5 rpwsm5
+bind C-6 rpwsm6
+bind C-7 rpwsm7
+bind C-8 rpwsm8
+
+# cycle workspaces 
+bind s-period exec rpws next
+bind s-comma exec rpws prev
+bind period exec rpws next
+bind comma exec rpws prev
+
+# command to move window to another workspace
+# usage: wmove <workspace_number>
+# didnt work
+#alias wmove exec ratpoison_wmove.sh
+
+bind s-semicolon colon
+# closes window
+bind BackSpace delete
+
+# kills application
+bind S-BackSpace kill 
+
+# kills frame 
+bind M-BackSpace remove 
+
+# cycling windows
+bind s-greater prev
+bind s-less next
+bind greater prev
+bind less next
+
+# frame resizing 
+bind U exec ratpoison -c "resize 0 20"
+bind N exec ratpoison -c "resize -20 0"
+bind E exec ratpoison -c "resize 0 -20"
+bind I exec ratpoison -c "resize 20 0"
+bind s-S shrink
+
+bind C-Up resize 0 20   
+bind C-Left resize -20 0   
+bind C-Down resize 0 -20   
+bind C-Right resize 20 0   
+
+# focus frames
+bind s-u focusup
+bind s-n focusleft
+bind s-e focusdown
+bind s-i focusright
+
+# exchange frames
+
+bind C-u exchangeup
+bind C-n exchangeleft
+bind C-e exchangedown
+bind C-i exchangeright
