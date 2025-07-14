@@ -16,14 +16,15 @@ import core.sys.posix.unistd;
 struct link
 {
     string from; // contains base name of file/directory/symlink
-    string to;   // contains path to the link direcotry
+    string to;   // contains path to the link directory
 };
 
 struct conf_s
 {
     string default_link_dir; /* directory to link files/directories/symlinks */
-    link[] specific_links;   /* specific directories to link instead of 'default_link_dir' */
     string[] ignored_items;  /* files/directories/symlinks that won't link */
+    link[] specific_links;   /* specific directories to link instead of 'default_link_dir' */
+
 };
 
 
@@ -32,6 +33,7 @@ conf_s get_config()
     string home_dir = environment.get("HOME", "/home/domain");
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
+        ,ignored_items: []
         ,specific_links: [
             {
                  from: ".bashrc"
@@ -49,8 +51,12 @@ conf_s get_config()
                  from: ".xsessionrc"
                 ,to: buildNormalizedPath(home_dir)
             }
+            ,{
+                 from: "ufetch"
+                ,to: buildNormalizedPath(home_dir ~ "/.local/bin")
+            }
         ]
-        ,ignored_items: []
+
     };
     return config;
 }
