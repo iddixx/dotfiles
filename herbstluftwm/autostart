@@ -275,10 +275,11 @@ for monitor in $(hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" "$monitor" &
 done
+
 redshift -x
 redshift -O 4500
 nitrogen --set-auto $HOME/dotfiles/bgs/rem_bg.png & # hardcoded
 flameshot &
 copyq &
-setxkbmap us,ru -variant colemak_dh_ortho,diktor -option grp:win_space_toggle -option caps:capslock
-
+setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:win_space_toggle -option caps:capslock
+#setxkbmap us,ru -variant colemak_dh_ortho,diktor -option grp:win_space_toggle -option caps:capslock
