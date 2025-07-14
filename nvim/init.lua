@@ -345,6 +345,8 @@ vim.cmd("command B buffers")
 vim.cmd("command C below Compile")
 vim.cmd("command W wincmd w")
 vim.cmd("command O Oil")
+vim.cmd("set undofile")
+vim.cmd("set undodir=~/.nvim/undo")
 
 -- line numbers
 vim.opt.number         = true
@@ -488,7 +490,7 @@ end
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = get_ramrem_lualine_theme(false),
+        theme = get_ramrem_lualine_theme(true),
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -529,7 +531,8 @@ require('lualine').setup {
 }
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
+--vim.opt.background = "dark"
 
 vim.g.komau_italic = false
 
