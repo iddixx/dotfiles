@@ -129,3 +129,4 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH=$PATH:/home/domain/.spicetify
+export PATH=/home/domain/.nimble/bin:$PATH
