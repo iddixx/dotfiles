@@ -21,6 +21,7 @@
 - rpws
 - Iosevka Nerd Font(used in polybar)
 - polybar v3.7.0+
+- brightnessctl
 - unclutter-xfixes
 - picom v1.12.0+
 - maim
