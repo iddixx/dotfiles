@@ -17,15 +17,16 @@
 - conky (i've installed v1.22.1)
 - flameshot
 ## Ratpoison-specific configuration dependencies
-- ratpoison v1.4.9
+- ratpoison v1.4.9+
 - rpws
-- boomer(zoomer application)
 - Iosevka Nerd Font(used in polybar)
 - polybar v3.7.0+
 - brightnessctl
 - unclutter-xfixes
 - picom v1.12.0+
 - maim
+- boomer(zoomer application)
+- xcolor
 
 # Deployment
 
