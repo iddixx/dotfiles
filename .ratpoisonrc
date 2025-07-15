@@ -113,6 +113,7 @@ bind s-Return exec dmenu_run -fn 'Iosevka Fixed SS14 SemiBold:pixelsize=25:antia
 
 # opening clipboard window
 definekey top s-v copyq toggle
+bind s-v exec copyq toggle
 bind v copyq toggle
 
 # maim -s takes screenshot of selected rectangular area
@@ -121,6 +122,16 @@ definekey top S-Print exec maim -s | xclip -selection clipboard -t image/png
 bind P exec maim | xclip -selection clipboard -t image/png
 definekey top Print exec maim -s | xclip -selection clipboard -t image/png
 bind p exec maim -s | xclip -selection clipboard -t image/png
+
+# color picker
+definekey top s-c exec xcolor | xargs -I {} copyq copy {}
+bind s-c exec xcolor | xargs -I {} copyq copy {}
+bind c exec xcolor | xargs -I {} copyq copy {}
+
+# zoom application
+definekey top s-z exec boomer
+bind s-z exec boomer
+bind z exec boomer
 
 # increasing/decreasing volume
 bind s-equal exec pactl set-sink-volume @DEFAULT_SINK@ +10%
