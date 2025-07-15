@@ -19,6 +19,7 @@
 ## Ratpoison-specific configuration dependencies
 - ratpoison v1.4.9
 - rpws
+- boomer(zoomer application)
 - Iosevka Nerd Font(used in polybar)
 - polybar v3.7.0+
 - brightnessctl
