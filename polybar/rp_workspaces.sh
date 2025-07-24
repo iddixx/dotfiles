@@ -2,7 +2,7 @@
 ratpoison -c 'set winfmt %g %n %t'
 windows=$(ratpoison -c windows)
 current_ws=$(ratpoison -c 'getenv wspl')
-N=8
+N=9
 declare -A has_windows
 while read -r line; do
   group=$(echo "$line" | awk '{print $1}')
