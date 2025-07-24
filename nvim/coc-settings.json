@@ -10,4 +10,5 @@
   ,"diagnostic.enable": true
   ,"clangd.arguments": ["--background-index"]
   ,"clangd.disableDiagnostics": true
+  ,"inlayHint.enable": false
 }

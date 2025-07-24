@@ -105,6 +105,10 @@ local colemak_mappings = {
     { modes = { "n" },                lhs = "<M-d>",      rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
     { modes = { "n" },                lhs = ";",          rhs = "q:" },
     { modes = { "n", "v", "o", "x" }, lhs = "g|",         rhs = "g~" },
+    { modes = { "n" },                lhs = "grn",         rhs = "grn" },
+    { modes = { "n" },                lhs = "grr",         rhs = "grr" },
+    { modes = { "n" },                lhs = "gri",         rhs = "gri" },
+    { modes = { "n" },                lhs = "g0",          rhs = "g0" },
 }
 
 function colemak_apply()
@@ -285,6 +289,7 @@ require('pckr').add({
     'sphamba/smear-cursor.nvim', -- smooth cursor
     'markonm/traces.vim',        -- highlights patterns in command mode
 
+    'lambdalisue/vim-suda', -- saving files with sudo
     -- [[ Themes ]] -- 
     'iddixx/alabaster-bold.nvim',           -- my fork of p00f/alabaster.nvim
     'estheruary/nvim-colorscheme-lavender', -- use with ai bg
@@ -535,6 +540,7 @@ vim.opt.background = "light"
 --vim.opt.background = "dark"
 
 vim.g.komau_italic = false
+vim.g["suda#prompt"] = "Porn folder encryption key: "
 
 --vim.cmd.colorscheme("lavender") -- use with ai bg
 --vim.cmd.colorscheme("base16-stella") -- use with purple anime girl bg
@@ -546,7 +552,11 @@ vim.g.komau_italic = false
 vim.cmd.colorscheme("alabaster") -- i like this theme
 
 --omnisharp
-vim.g.OmniSharp_server_path         = 'C:\\Users\\ondar\\!language_servers\\Omnisharp\\OmniSharp.exe'
+if vim.uv.os_uname().sysname == "Windows_NT" then
+    vim.g.OmniSharp_server_path         = 'C:\\Users\\ondar\\!language_servers\\Omnisharp\\OmniSharp.exe'
+else
+    vim.g.OmniSharp_server_path         = '/home/domain/.cache/omnisharp-vim/omnisharp-roslyn/run'
+end
 vim.g.OmniSharp_selector_findusages = 'fzf'
 
 -- cpp higlight
