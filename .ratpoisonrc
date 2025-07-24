@@ -56,8 +56,8 @@ exec unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &
 # cool wallpaper
 exec nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ram_bg.png
 
-# creating 8 workspaces
-exec rpws init 8 -k &
+# creating 9 workspaces
+exec rpws init 9 -k &
 
 # keyboard layout and night light  
 # i change layouts pressing two shifts simultaniousely
@@ -148,6 +148,17 @@ bind 5 rpws5
 bind 6 rpws6
 bind 7 rpws7
 bind 8 rpws8
+bind 9 rpws9
+
+bind s-1 rpws1
+bind s-2 rpws2
+bind s-3 rpws3
+bind s-4 rpws4
+bind s-5 rpws5
+bind s-6 rpws6
+bind s-7 rpws7
+bind s-8 rpws8
+bind s-9 rpws9
 
 # moving windows to workspaces
 bind C-1 rpwsm1
@@ -158,6 +169,7 @@ bind C-5 rpwsm5
 bind C-6 rpwsm6
 bind C-7 rpwsm7
 bind C-8 rpwsm8
+bind C-9 rpwsm9
 
 # cycle workspaces 
 bind s-period exec rpws next
