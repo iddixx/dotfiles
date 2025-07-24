@@ -33,10 +33,14 @@ conf_s get_config()
     string home_dir = environment.get("HOME", "/home/domain");
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
-        ,ignored_items: ["system24.theme.css"]
+        ,ignored_items: []
         ,specific_links: [
             {
                  from: ".bashrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
+                 from: ".bash_aliases"
                 ,to: buildNormalizedPath(home_dir)
             }
             ,{
@@ -54,6 +58,10 @@ conf_s get_config()
             ,{
                  from: "ufetch"
                 ,to: buildNormalizedPath(home_dir ~ "/.local/bin")
+            }
+            ,{
+                 from: "system24.theme.css"
+                ,to: buildNormalizedPath(home_dir ~ "/.config/vesktop/themes")
             }
         ]
 
