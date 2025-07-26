@@ -1,7 +1,7 @@
 # Dependencies and requirements
 - Iosevka Fixed SS14 Font(used almost everywhere)
 - rdmd(needed to execute deploy.d, usually comes with dmd compiler)
-- nvim v0.11+
+- nvim v0.11+(also works on v0.10)
 - kitty (i've installed v0.41.1)
 - [this](https://github.com/drscream/lemonbar-xft) lemonbar fork
 - dmenu
