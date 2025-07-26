@@ -102,6 +102,7 @@ local colemak_mappings = {
     { modes = { "t", "i" },           lhs = "<C-w>t", rhs = "<C-\\><C-n>" },
 
     --other
+    { modes = { "n" },                lhs = "ZQ",          rhs = "" }, 
     { modes = { "n" },                lhs = "<M-d>",      rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
     { modes = { "n" },                lhs = ";",          rhs = "q:" },
     { modes = { "n", "v", "o", "x" }, lhs = "g|",         rhs = "g~" },
@@ -288,6 +289,27 @@ require('pckr').add({
     "rktjmp/lush.nvim",
     'sphamba/smear-cursor.nvim', -- smooth cursor
     'markonm/traces.vim',        -- highlights patterns in command mode
+    {
+        'madskjeldgaard/cppman.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' }
+        },
+        config = function()
+            local cppman = require"cppman"
+            cppman.setup()
+
+            -- Make a keymap to open the word under cursor in CPPman
+            vim.keymap.set("n", "cppu", function()
+                cppman.open_cppman_for(vim.fn.expand("<cword>"))
+            end)
+
+            -- Open search box
+            vim.keymap.set("n", "cpps", function()
+                cppman.input()
+            end)
+
+        end
+    },
 
     'lambdalisue/vim-suda', -- saving files with sudo
     -- [[ Themes ]] -- 
