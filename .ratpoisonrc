@@ -88,6 +88,7 @@ set wingravity center
 set transgravity center
 set border 3
 set barborder 0
+set onlyborder 0
 set msgwait 1
 set framemsgwait 1
 
