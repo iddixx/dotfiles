@@ -134,6 +134,17 @@ definekey top s-z exec boomer
 bind s-z exec boomer
 bind z exec boomer
 
+# polybar controls
+
+# close polybar
+bind B exec ratpoison -c 'set padding 0 0 0 0' && exec pkill polybar
+
+# launch polybar
+bind b exec ratpoison -c 'set padding 0 0 0 32' && polybar ram &
+
+# restart polybar
+bind C-b exec pkill polybar && polybar ram &
+
 # increasing/decreasing volume
 bind s-equal exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bind s-minus exec pactl set-sink-volume @DEFAULT_SINK@ -10%
