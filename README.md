@@ -1,3 +1,8 @@
+> [!WARNING]
+> Do not send any pull requests or/and issues.
+> My dotfiles supposed to work **ONLY** on my machine.
+> If it doesn't work on yours, clone/fork it, and fix it yourself.
+
 # Dependencies and requirements
 - Iosevka Fixed SS14 Font(used almost everywhere)
 - rdmd(needed to execute deploy.d, usually comes with dmd compiler)
