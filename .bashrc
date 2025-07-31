@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-eval "$(zoxide init bash --cmd cd)"
+eval "$(zoxide init bash --cmd tp)"
 
 export EDITOR=nvim
 export GITU_SHOW_EDITOR=nvim
