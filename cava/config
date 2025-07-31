@@ -18,7 +18,7 @@
 
 # Manual sensitivity in %. If autosens is enabled, this will only be the initial value.
 # 200 means double height. Accepts only non-negative values.
-sensitivity = 60
+sensitivity = 100
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
@@ -233,9 +233,9 @@ sensitivity = 60
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 2
 gradient_color_1 = '#feacd0'
-gradient_color_2 = '#87B8E7'
-gradient_color_3 = '#719FE3'
-gradient_color_4 = '#71ade7'
+gradient_color_2 = '#ff7fc0'
+gradient_color_3 = '#f28cbf'
+gradient_color_4 = '#874580'
 
 
 
