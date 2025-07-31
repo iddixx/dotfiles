@@ -33,7 +33,7 @@ conf_s get_config()
     string home_dir = environment.get("HOME", "/home/domain");
     conf_s config = {
          default_link_dir: buildNormalizedPath(home_dir, ".config")
-        ,ignored_items: []
+        ,ignored_items: ["run_dmenu.d"]
         ,specific_links: [
             {
                  from: ".bashrc"

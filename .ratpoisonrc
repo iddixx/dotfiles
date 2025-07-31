@@ -111,7 +111,7 @@ bind Escape noop
 bind s-S-Return exec kitty
 
 # app launcher
-bind s-Return exec dmenu_run -fn 'Iosevka Fixed SS14 SemiBold:pixelsize=25:antialias=true' -nb '#61325C' -nf '#F7A0CB' -sb '#F9B7DD' -sf '#A853BB' 
+bind s-Return exec $HOME/dotfiles/run_dmenu.d
 
 # opening clipboard window
 definekey top s-v copyq toggle
