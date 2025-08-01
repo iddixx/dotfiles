@@ -62,7 +62,7 @@ exec rpws init 9 -k &
 # setting keyboard layout, night light and disabling X11 suspend 
 # i call 'sleep 1' before everything to be sure, that the X11 is initialized
 # i change layouts pressing two shifts simultaniousely
-exec sh -c 'sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank  && xset s aff'
+exec sh -c 'sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank  && xset s off'
 
 exec copyq & 
 
