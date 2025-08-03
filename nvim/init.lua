@@ -382,6 +382,7 @@ vim.cmd("set showcmd!")
 -- statusline and command mode things
 vim.opt.cmdheight=0
 vim.opt.laststatus=0
+vim.opt.virtualedit='all'
 
 -- vim.cmd("au VimLeave * set guicursor=a:hor100") -- for underline
 vim.cmd("au VimLeave * set guicursor=a:ver100") -- for beam cursor
