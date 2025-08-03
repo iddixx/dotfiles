@@ -311,6 +311,27 @@ require('pckr').add({
         end
     },
 
+    { -- nvim as kitty scrollback buffer
+        'mikesmithgh/kitty-scrollback.nvim',
+        disable = false,
+        opt = true,
+        cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth', 'KittyScrollbackGenerateCommandLineEditing' },
+        event = { 'User KittyScrollbackLaunch' },
+        -- tag = '*', -- latest stable version, may have breaking changes if major version changed
+        -- tag = 'v6.0.0', -- pin specific tag
+        config = function()
+            require('kitty-scrollback').setup({
+                { 
+                    visual_selection_highlight_mode = 'reverse',
+                    status_window = {
+                        enabled = true,
+                        style_simple = true,
+                    },
+                },
+        })
+        end,
+    },
+
     'lambdalisue/vim-suda', -- saving files with sudo
     -- [[ Themes ]] -- 
     'iddixx/alabaster-bold.nvim',           -- my fork of p00f/alabaster.nvim
@@ -321,7 +342,6 @@ require('pckr').add({
     'andreypopp/vim-colors-plain',
 })
 -- gui settings
-
 if vim.g.neovide then
     vim.o.guifont = "Iosevka Fixed SS14:h18"
     vim.g.neovide_hide_mouse_when_typing = true
