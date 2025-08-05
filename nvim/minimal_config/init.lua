@@ -56,7 +56,7 @@ local colemak_mappings = {
     { modes = { "n", "o", "x", "v" },      lhs = "dd",         rhs = "\"_dd" },
 
     -- fixes                 
-    { modes = { "n", "o", "x", "v" }, lhs = "v",         rhs = "v" },
+    { modes = { "n", "o", "x", "v" }, lhs = "v",          rhs = "v" },
     { modes = { "n", "o", "x" },      lhs = "ci",         rhs = "\"+ci" },
     { modes = { "n", "o", "x" },      lhs = "cc",         rhs = "\"+cc" },
     { modes = { "n", "o", "x" },      lhs = "yi",         rhs = "\"+yi" },
@@ -102,9 +102,15 @@ local colemak_mappings = {
     { modes = { "t", "i" },           lhs = "<C-w>t", rhs = "<C-\\><C-n>" },
 
     --other
-    { modes = { "n" },                lhs = "<M-d>",      rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
-    { modes = { "n" },                lhs = ";",          rhs = "q:" },
-    { modes = { "n", "v", "o", "x" }, lhs = "g|",         rhs = "g~" },
+    { modes = { "n" },                lhs = "<C-z>",       rhs = "" }, 
+    { modes = { "n" },                lhs = "ZQ",          rhs = "" }, 
+    { modes = { "n" },                lhs = "<M-d>",       rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
+    { modes = { "n" },                lhs = ";",           rhs = "q:" },
+    { modes = { "n", "v", "o", "x" }, lhs = "g|",          rhs = "g~" },
+    { modes = { "n" },                lhs = "grn",         rhs = "grn" },
+    { modes = { "n" },                lhs = "grr",         rhs = "grr" },
+    { modes = { "n" },                lhs = "gri",         rhs = "gri" },
+    { modes = { "n" },                lhs = "g0",          rhs = "g0" },
 }
 
 function colemak_apply()

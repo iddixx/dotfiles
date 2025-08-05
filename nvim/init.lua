@@ -56,7 +56,7 @@ local colemak_mappings = {
     { modes = { "n", "o", "x", "v" },      lhs = "dd",         rhs = "\"_dd" },
 
     -- fixes                 
-    { modes = { "n", "o", "x", "v" }, lhs = "v",         rhs = "v" },
+    { modes = { "n", "o", "x", "v" }, lhs = "v",          rhs = "v" },
     { modes = { "n", "o", "x" },      lhs = "ci",         rhs = "\"+ci" },
     { modes = { "n", "o", "x" },      lhs = "cc",         rhs = "\"+cc" },
     { modes = { "n", "o", "x" },      lhs = "yi",         rhs = "\"+yi" },
@@ -102,10 +102,11 @@ local colemak_mappings = {
     { modes = { "t", "i" },           lhs = "<C-w>t", rhs = "<C-\\><C-n>" },
 
     --other
+    { modes = { "n" },                lhs = "<C-z>",       rhs = "" }, 
     { modes = { "n" },                lhs = "ZQ",          rhs = "" }, 
-    { modes = { "n" },                lhs = "<M-d>",      rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
-    { modes = { "n" },                lhs = ";",          rhs = "q:" },
-    { modes = { "n", "v", "o", "x" }, lhs = "g|",         rhs = "g~" },
+    { modes = { "n" },                lhs = "<M-d>",       rhs = "<cmd>lua vim.diagnostic.open_float()<CR>" },
+    { modes = { "n" },                lhs = ";",           rhs = "q:" },
+    { modes = { "n", "v", "o", "x" }, lhs = "g|",          rhs = "g~" },
     { modes = { "n" },                lhs = "grn",         rhs = "grn" },
     { modes = { "n" },                lhs = "grr",         rhs = "grr" },
     { modes = { "n" },                lhs = "gri",         rhs = "gri" },
@@ -174,7 +175,6 @@ require('pckr').add({
     --lsp related stuff--
     { 'neoclide/coc.nvim', branch = 'release' },
     'neovim/nvim-lspconfig',
-    'OmniSharp/omnisharp-vim',
 
     --syntax highlight--
     'octol/vim-cpp-enhanced-highlight',
@@ -369,6 +369,7 @@ end
 --[[ LSP Setup ]]
 
 require 'lspconfig'.gleam.setup({})
+vim.lsp.enable('omnisharp')
 
 --[[ Editor ]]
 vim.g.loaded_netrw       = 1
@@ -594,13 +595,6 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
 vim.cmd.colorscheme("alabaster") -- i like this theme
 
---omnisharp
-if vim.uv.os_uname().sysname == "Windows_NT" then
-    vim.g.OmniSharp_server_path         = 'C:\\Users\\ondar\\!language_servers\\Omnisharp\\OmniSharp.exe'
-else
-    vim.g.OmniSharp_server_path         = '/home/domain/.cache/omnisharp-vim/omnisharp-roslyn/run'
-end
-vim.g.OmniSharp_selector_findusages = 'fzf'
 
 -- cpp higlight
 vim.g.lsp_cxx_hl_use_text_props     = 1
