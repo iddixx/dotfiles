@@ -40,6 +40,10 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir)
             }
             ,{
+                 from: ".inputrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
                  from: ".bash_aliases"
                 ,to: buildNormalizedPath(home_dir)
             }

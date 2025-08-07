@@ -1,0 +1,58 @@
+set editing-mode vi                                            
+# vi settings                                         
+$if mode=vi                
+    set show-mode-in-prompt on
+    set vi-cmd-mode-string "\1\e[0 q\2"
+    set vi-ins-mode-string "\1\e[6 q\2"
+    # normal mode                           
+    set keymap vi-command                                 
+
+    # unbinding rebinded keys
+    "i": nop
+    "n": nop                
+    "u": nop
+    "e": nop
+    "U": nop
+    "E": nop 
+    "I": nop
+    "N": nop
+    "w": nop
+    "a": nop
+    "j": nop
+    "b": nop
+    "dc": nop
+    "dc": nop
+    "d$": nop
+    "d0": nop
+    "dd": nop
+    "dw": nop
+    "l": nop 
+
+
+    "i": forward-char
+    "n": backward-char
+    "u": previous-screen-line
+    "e": next-screen-line
+
+    "I": shell-forward-word
+    "N": shell-backward-word
+    "w": forward-word
+    "a": backward-word
+
+    "dc": delete-char
+    "d$": kill-line
+    "d0": backward-kill-line
+    "dd": kill-whole-line
+    "dw": shell-kill-word
+
+    "l": undo
+
+    "j": vi-insertion-mode
+    "b": vi-append-mode
+
+    # insert mode             
+    set keymap vi-insert                          
+
+$endif 
+
+
