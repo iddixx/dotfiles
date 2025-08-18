@@ -80,7 +80,7 @@ myConfig = def {
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
-    , X.layoutHook         = smartBorders ( ResizableTall 1 (3/100) (1/2) []X.||| X.Full )
+    , X.layoutHook         = smartBorders ( X.Full X.||| ResizableTall 1 (3/100) (1/2)[] )
 }
 
 myKeys = [
