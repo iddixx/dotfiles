@@ -677,8 +677,8 @@ require('lualine').setup {
 }
 
 vim.opt.termguicolors = true
-vim.opt.background = "light"
---vim.opt.background = "dark"
+-- vim.opt.background = "light"
+vim.opt.background = "dark"
 
 vim.g.komau_italic = false
 vim.g["suda#prompt"] = "Porn folder encryption key: "
