@@ -64,7 +64,11 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir ~ "/.local/bin")
             }
             ,{
-                 from: "system24.theme.css"
+                 from: "system24-ram.theme.css"
+                ,to: buildNormalizedPath(home_dir ~ "/.config/vesktop/themes")
+            }
+            ,{
+                 from: "system24-darker.theme.css"
                 ,to: buildNormalizedPath(home_dir ~ "/.config/vesktop/themes")
             }
         ]
