@@ -124,9 +124,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH=$PATH:/home/domain/.spicetify
 export PATH=/home/domain/.nimble/bin:$PATH
+
+[ -f "/home/domain/.ghcup/env" ] && . "/home/domain/.ghcup/env" # ghcup-env
