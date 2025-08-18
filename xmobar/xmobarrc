@@ -1,0 +1,21 @@
+-- vim: ft=haskell
+Config { font     = "Iosevka Fixed SS14 Light 18"
+       -- , bgColor  = "#27333e"
+       -- , fgColor  = "#cecece"
+       , bgColor  = "#000000"
+       , fgColor  = "#FFFFFF"
+       , overrideRedirect = True
+       , lowerOnStart = True
+       -- , alpha    = 1000
+       , position = BottomSize L 91 36
+       , iconRoot = "."
+       , commands = [ Run Com "bash" ["-c", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'"] "volume" 5
+                    , Run Date "%Y-%m-%d %H:%M:%S" "date" 10
+                    , Run Com "cat" ["/sys/class/power_supply/BAT0/capacity"] "battery" 600 
+                    , Run Com "xkb-switch" ["-f"] "layout" 5 
+                    , Run XMonadLog
+                    ]
+       , sepChar  = "!"
+       , alignSep = "}{"
+       , template = "<fc=#00FF00>!XMonadLog!</fc> <fc=#636363>|</fc> !layout! <fc=#636363>|</fc> Battery: !battery!% <fc=#636363>|</fc> Volume: !volume! <fc=#636363>|</fc> !date!}{ "
+       }
