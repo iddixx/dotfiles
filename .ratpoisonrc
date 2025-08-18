@@ -111,7 +111,7 @@ bind Escape noop
 bind s-S-Return exec kitty
 
 # app launcher
-bind s-Return exec $HOME/dotfiles/run_dmenu.d
+bind s-Return exec $HOME/dotfiles/run_dmenu.d --theme ram
 
 # opening clipboard window
 definekey top s-v copyq toggle
