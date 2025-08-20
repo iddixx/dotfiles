@@ -24,7 +24,7 @@ main = do
     X.xmonad . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) toggleStrutsKey $ myConfig
     where 
         toggleStrutsKey :: X.XConfig X.Layout -> (X.KeyMask, X.KeySym)
-        toggleStrutsKey X.XConfig{ X.modMask = m } = (m, X.xK_b)
+        toggleStrutsKey X.XConfig{ X.modMask = m } = (m, X.xK_Tab)
 
 myXmobarPP :: PP
 myXmobarPP = def
@@ -57,6 +57,7 @@ myManageHook = X.composeAll
     , X.className X.=? "pavucontrol" X.--> doCenterFloat
     , X.className X.=? "copyq" X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "mpv" X.--> (doFocus >> doCenterFloat)
+    , X.className X.=? "gcr-prompter" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Discord Updater" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Settings" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Friends List" X.--> (doFocus >> doCenterFloat)
@@ -77,6 +78,7 @@ myConfig = def {
                              X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ryou_ascii_bg1610.png" >>
                              X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank  && xset s off" >> 
                              X.spawn "copyq &" >>
+                             -- X.spawn "copyq hide" >>
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
