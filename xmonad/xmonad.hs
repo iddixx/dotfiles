@@ -58,6 +58,7 @@ myManageHook = X.composeAll
     , X.className X.=? "copyq" X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "mpv" X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "gcr-prompter" X.--> (doFocus >> doCenterFloat)
+    , X.className X.=? "Gcr-prompter" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Discord Updater" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Settings" X.--> (doFocus >> doCenterFloat)
     , X.title X.=? "Friends List" X.--> (doFocus >> doCenterFloat)
