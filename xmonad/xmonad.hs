@@ -32,7 +32,6 @@ myXmobarPP = def
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = blue . wrap " " "" . xmobarBorder "Bottom" "#6881b5" 2
     , ppHidden          = white . wrap " " ""
-    -- , ppLayout          = blue . wrap " " ""
     , ppHiddenNoWindows = gray . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
     , ppOrder           = \[ws, l, _] -> [ws, l]
@@ -49,8 +48,6 @@ myXmobarPP = def
     yellow   = xmobarColor "#f1fa8c" ""
     red      = xmobarColor "#ff5555" ""
 
-
-     
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "unityhub" X.--> doCenterFloat
@@ -79,7 +76,6 @@ myConfig = def {
                              X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ryou_ascii_bg1610.png" >>
                              X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank  && xset s off" >> 
                              X.spawn "copyq &" >>
-                             -- X.spawn "copyq hide" >>
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
@@ -105,10 +101,8 @@ myKeys = [
   , ("M-C-7", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 6))
   , ("M-C-8", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-C-9", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 8))
-  , ("M-<Return>",     X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
-  -- , ("M-M1-f",       X.spawn "firefox") 
-  -- , ("M-M1-c",       X.spawn "code") 
-  , ("M-S-<Return>",   X.spawn "kitty")
+  , ("M-<Return>",             X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
+  , ("M-S-<Return>",           X.spawn "kitty")
   , ("M-<Backspace>",          X.kill)
   , ("M-S-q",                  X.spawn "pkill xmonad")
   , ("M-S-v",                  X.spawn "copyq toggle")
@@ -136,7 +130,7 @@ myKeys = [
   , ("M-C-n",                  X.sendMessage X.Shrink)
   , ("M-C-i",                  X.sendMessage X.Expand)
   , ("M-f",                    X.withFocused toggleFloat)
-  , ("M-S-r",                  X.spawn restart_command) ]
+  , ("M-S-r",                  X.spawn "pkill stalonetray" >> X.spawn restart_command) ]
   where 
         restart_command = "if type xmonad; then xmonad --recompile && xmonad --restart;" ++
           " else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
