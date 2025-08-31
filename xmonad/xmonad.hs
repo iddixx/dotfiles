@@ -71,10 +71,10 @@ myConfig = def {
     , X.modMask            = X.mod4Mask
     , X.focusFollowsMouse  = False
     , X.manageHook = myManageHook X.<+> X.manageHook def
-    , X.startupHook        = X.spawn "stalonetray &" >>
+    , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
                              X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/ascii/16_10/" >>
-                             X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh,diktor,diktor -option grp:shifts_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank  && xset s off" >> 
+                             X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh_ortho,diktor,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
                              X.spawn "copyq &" >>
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
@@ -101,8 +101,8 @@ myKeys = [
   , ("M-C-7", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 6))
   , ("M-C-8", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-C-9", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 8))
-  , ("M-<Return>",             X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
-  , ("M-S-<Return>",           X.spawn "kitty")
+  , ("M-r",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
+  , ("M-t",                    X.spawn "kitty")
   , ("M-<Backspace>",          X.kill)
   , ("M-S-q",                  X.spawn "pkill xmonad")
   , ("M-S-v",                  X.spawn "copyq toggle")
