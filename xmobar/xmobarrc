@@ -10,7 +10,7 @@ Config { font     = "Iosevka Fixed SS14 Light 15"
        , position = BottomSize L 91 36
        , iconRoot = "."
        , commands = [ Run Com "bash" ["-c", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'"] "volume" 1
-                    , Run Date "%Y-%m-%d %H:%M" "date" 10
+                    , Run Date "%Y-%m-%d %H:%M" "date" 50
                     , Run Com "/home/domain/dotfiles/xmobar/battery.d" [] "battery" 5
                     , Run Com "xkb-switch" [] "layout" 5 
                     , Run Com "/home/domain/dotfiles/polybar/brightness_ctl.sh" [] "brightness" 1 
