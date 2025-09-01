@@ -170,7 +170,6 @@ local cmd = require('pckr.loader.cmd')
 local event = require('pckr.loader.event')
 
 require('pckr').add({
-    'voldikss/vim-floaterm', --floating terminal
 
     --lsp related stuff--
     { 'neoclide/coc.nvim', branch = 'release' },
@@ -708,8 +707,6 @@ vim.g.cpp_posix_standard            = 1
 vim.g.cpp_concepts_highlight        = 1
 
 
-vim.g.floaterm_keymap_toggle = '<Space>tt'
-vim.g.floaterm_keymap_kill   = '<Space>tk'
 
 
 --[[ coc.nvim ]]
