@@ -15,9 +15,9 @@ void main()
     {
         if(line.canFind("ethernet") && line.canFind("connected"))
         {
-            write("<fc=#00ff00>LAN connected</fc> <fc=#636363>|</fc> ");
-
+            write("<fc=#00ff00>Ethernet connected</fc> <fc=#636363>|</fc> ");
             ethernet_connected = true;
+            break;
         }
     }
 
@@ -45,7 +45,7 @@ void main()
     }
     if(!ethernet_connected)
     {
-        write("<fc=#ff0000>No LAN</fc> <fc=#636363>|</fc> ");
+        write("<fc=#ff0000>No Ethernet</fc> <fc=#636363>|</fc> ");
     }
     if(!found_connected)
     {
