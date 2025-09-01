@@ -176,7 +176,7 @@ require('pckr').add({
     'neovim/nvim-lspconfig',
 
     --syntax highlight--
-    'octol/vim-cpp-enhanced-highlight',
+    'bfrg/vim-c-cpp-modern',
     'gleam-lang/gleam.vim',
 
     --statusline and buffer line--
@@ -699,13 +699,12 @@ vim.cmd.colorscheme("black-metal-dark-funeral") -- dark theme
 
 
 -- cpp higlight
-vim.g.lsp_cxx_hl_use_text_props     = 1
-vim.g.cpp_class_scope_highlight     = 1
-vim.g.cpp_member_variable_highlight = 1
-vim.g.cpp_class_decl_highlight      = 1
-vim.g.cpp_posix_standard            = 1
-vim.g.cpp_concepts_highlight        = 1
-
+vim.g.cpp_function_highlight = false
+vim.g.cpp_attributes_highlight = true
+vim.g.cpp_member_highlight = true
+vim.g.cpp_type_name_highlight = false
+vim.g.cpp_operator_highlight = true
+vim.g.cpp_simple_highlight = false
 
 
 
