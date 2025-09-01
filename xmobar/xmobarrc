@@ -14,7 +14,7 @@ Config { font     = "Iosevka Fixed SS14 Light 15"
                     , Run Com "/home/domain/dotfiles/xmobar/battery.d" [] "battery" 5
                     , Run Com "xkb-switch" [] "layout" 5 
                     , Run Com "/home/domain/dotfiles/polybar/brightness_ctl.sh" [] "brightness" 1 
-                    , Run Com "/home/domain/dotfiles/xmobar/essid_signal.d" [] "wifi" 5 
+                    , Run Com "/home/domain/dotfiles/xmobar/network.d" [] "wifi" 5 
                     , Run XMonadLog 
                     , Run StdinReader
                     ]
