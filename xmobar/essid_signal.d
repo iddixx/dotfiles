@@ -4,14 +4,21 @@ import std.process;
 import std.string;
 import std.regex;
 import std.conv;
+import std.algorithm.searching;
 
 void main()
 {
-    auto iwResult = executeShell("iwconfig wlan0 2>&1");
-    if (iwResult.output.indexOf("no wireless extensions.") != -1)
+    auto devices_info = executeShell("nmcli -t -f STATE,TYPE device status");
+    auto devices_output = devices_info.output.splitLines();
+    bool ethernet_connected = false;
+    foreach(string line; devices_output)
     {
-        writeln("wired");
-        return;
+        if(line.canFind("ethernet") && line.canFind("connected"))
+        {
+            write("<fc=#00ff00>LAN connected</fc> <fc=#636363>|</fc> ");
+
+            ethernet_connected = true;
+        }
     }
 
     auto nmResult = executeShell("nmcli dev wifi");
@@ -36,9 +43,13 @@ void main()
             break;
         }
     }
+    if(!ethernet_connected)
+    {
+        write("<fc=#ff0000>No LAN</fc> <fc=#636363>|</fc> ");
+    }
     if(!found_connected)
     {
-        writeln("<fc=#ff0000>No connection</fc>");
+        writeln("<fc=#ff0000>No Wi-Fi</fc>");
         return;
     }
     auto signal_int = parse!int(signal);
