@@ -41,7 +41,7 @@ void main()
     }
 
 
-    write("Battery: " 
+    write("BAT: " 
             ~ battery_charge
             ~ " "
             ~ pretty_battery_status);
