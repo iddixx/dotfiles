@@ -440,6 +440,27 @@ require('pckr').add({
     'wincent/base16-nvim',
     'ntk148v/komau.vim',
     'andreypopp/vim-colors-plain',
+    {
+        'iddixx/gruber-darker.nvim',
+        config = function()
+            require("gruber-darker").setup({
+                bold = true,
+                invert = {
+                    signs = false,
+                    tabline = false,
+                    visual = false,
+                },
+                italic = {
+                    strings = false,
+                    comments = false,
+                    operators = false,
+                    folds = false,
+                },
+                undercurl = true,
+                underline = false,
+            })
+        end,
+    },
 })
 -- gui settings
 if vim.g.neovide then
@@ -695,7 +716,7 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("komau") -- cool monochrome theme
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
 -- vim.cmd.colorscheme("alabaster") -- i like this theme
-vim.cmd.colorscheme("black-metal-dark-funeral") -- dark theme
+vim.cmd.colorscheme("gruber-darker") -- dark theme
 
 
 -- cpp higlight
