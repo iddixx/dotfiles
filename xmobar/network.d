@@ -13,7 +13,7 @@ void main()
     bool ethernet_connected = false;
     foreach(string line; devices_output)
     {
-        if(line.canFind("ethernet") && line.canFind("connected"))
+        if(line == "connected:ethernet")
         {
             write("<fc=#00ff00>Ethernet connected</fc> <fc=#636363>|</fc> ");
             ethernet_connected = true;
