@@ -115,6 +115,8 @@ myKeys = [
   , ("S-<Print>",              X.spawn "flameshot screen -c")
   , ("<XF86AudioLowerVolume>", X.spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
   , ("<XF86AudioRaiseVolume>", X.spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
+  , ("S-<XF86AudioLowerVolume>", X.spawn "brightnessctl set 1%-")
+  , ("S-<XF86AudioRaiseVolume>", X.spawn "brightnessctl set +1%")
   , ("<XF86AudioMute>",        X.spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
   , ("M--",                    X.spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
   , ("M-=",                    X.spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
