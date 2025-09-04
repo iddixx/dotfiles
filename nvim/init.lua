@@ -111,6 +111,8 @@ local colemak_mappings = {
     { modes = { "n" },                lhs = "grr",         rhs = "grr" },
     { modes = { "n" },                lhs = "gri",         rhs = "gri" },
     { modes = { "n" },                lhs = "g0",          rhs = "g0" },
+    { modes = { "v" },                lhs = ">",           rhs = ">gv" },
+    { modes = { "v" },                lhs = "<",          rhs = "<gv" },
 }
 
 function colemak_apply()
