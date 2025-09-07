@@ -1,4 +1,6 @@
 import XMonad.Layout.WindowNavigation qualified as WN
+import XMonad.Hooks.InsertPosition (insertPosition, Position(End), Focus(Newer))
+import XMonad.Layout.Decoration 
 import XMonad.Actions.FloatKeys ( Direction2D(..) )
 import XMonad.Layout.Spacing ( spacing )
 import XMonad.StackSet qualified as W
@@ -13,9 +15,11 @@ import XMonad.Hooks.StatusBar.PP
 import Prelude
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.NoBorders
+import XMonad.Util.Themes
 import XMonad.Actions.CycleWS as CWS
 import System.Exit ( exitSuccess )
 import XMonad qualified as X
+import XMonad.Layout.Tabbed
 import Data.Map qualified as M
 import Data.Ratio ()
 
@@ -48,8 +52,24 @@ myXmobarPP = def
     yellow   = xmobarColor "#f1fa8c" ""
     red      = xmobarColor "#ff5555" ""
 
+myTabTheme = def {
+            activeColor         = "#000000"  
+          , activeBorderColor   = "#6881b5"  
+          , inactiveColor       = "#000000"  
+          , inactiveBorderColor = "#636363"
+
+          , activeTextColor     = "#6881b5"  
+          , inactiveTextColor   = "#636363"  
+          , urgentTextColor     = "#FF0000"
+          , fontName            = "xft:Iosevka Fixed SS14:size=13"
+          , decoHeight          = 26
+          , windowTitleAddons   = []
+          , windowTitleIcons    = []
+ }
+
 myManageHook = X.composeAll
-    [ isDialog X.--> (doFocus >> doCenterFloat)
+    [ insertPosition End Newer
+    , isDialog X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "unityhub" X.--> doCenterFloat
     , X.className X.=? "pavucontrol" X.--> doCenterFloat
     , X.className X.=? "copyq" X.--> (doFocus >> doCenterFloat)
@@ -74,13 +94,14 @@ myConfig = def {
     , X.manageHook = myManageHook X.<+> X.manageHook def
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
-                             X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/ascii/16_10/" >>
+                             -- X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/ascii/16_10/" >>
+                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/plotnishek_tohru1610_ascii.png" >>
                              X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh_ortho,diktor,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
                              X.spawn "copyq &" >>
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
-    , X.layoutHook         = smartBorders ( X.Full X.||| ResizableTall 1 (3/100) (1/2)[] )
+    , X.layoutHook         = smartBorders ( tabbed shrinkText myTabTheme X.||| ResizableTall 1 (3/100) (1/2)[] X.||| X.Full )
 }
 
 myKeys = [
