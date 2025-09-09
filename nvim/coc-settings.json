@@ -11,4 +11,20 @@
   ,"clangd.arguments": ["--background-index"]
   ,"clangd.disableDiagnostics": true
   ,"inlayHint.enable": false
+  ,"languageserver": {
+      "ada": {
+          "settings": {
+              "ada": {
+                  "projectFile": "gnat/vss_text.gpr"
+                 ,"sourceInfoDiagnostics": false
+              }
+          },
+          "command": "$HOME/.local/bin/ada_language_server",
+          "filetypes": [
+              "ads",
+              "adb",
+              "ada"
+          ]
+      }
+  }
 }
