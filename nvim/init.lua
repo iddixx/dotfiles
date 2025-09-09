@@ -536,10 +536,13 @@ vim.cmd("command B buffers")
 vim.cmd("command C below Compile")
 vim.cmd("command W wincmd w")
 
-vim.api.nvim_create_user_command("O", function(opts) require("oil").open(opts.fargs[1]) end, {
-  nargs = 1, 
-  desc = "Open directory with Oil",
-})
+vim.api.nvim_create_user_command("O", 
+    function(opts)
+        require("oil").open(opts.fargs[1])
+    end, {
+        nargs = "?", 
+        desc = "Open directory with Oil",
+    })
 
 vim.cmd("set undofile")
 vim.cmd("set undodir=~/.nvim/undo")
