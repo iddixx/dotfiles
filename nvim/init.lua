@@ -180,6 +180,26 @@ require('pckr').add({
     --syntax highlight--
     'bfrg/vim-c-cpp-modern',
     'gleam-lang/gleam.vim',
+    {
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'master',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+        config = function()
+            require('nvim-treesitter.configs').setup {
+                -- Add your treesitter configuration options here
+                ensure_installed = { "gleam", "ada" },
+                highlight = {
+                    enable = true,
+                },
+                indent = {
+                    enable = true,
+                },
+            }
+        end,
+    },
 
     --statusline and buffer line--
     'nvim-lualine/lualine.nvim',
@@ -489,9 +509,10 @@ end
 
 --require("smear_cursor").toggle()
 
+
 --[[ LSP Setup ]]
 
-require 'lspconfig'.gleam.setup({})
+vim.lsp.enable('gleam')
 vim.lsp.enable('omnisharp')
 
 --[[ Editor ]]
