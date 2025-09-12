@@ -273,12 +273,6 @@ require('pckr').add({
                     timeout_normal = 200,
                 },
 
-                cmds = {
-                    -- The default command to run when you compile. Change this if you use a different build tool!
-                    -- I will make it possible to have dynamic default for each project types soon~
-                    default = " clear", -- space before is important, it means "do not save this command to history"
-                },
-
                 patterns = {
                     -- A table of patterns to match compiler output. This is how the plugin finds
                     -- files, lines, and columns for errors. The "123" and "12" refer to the
@@ -307,7 +301,7 @@ require('pckr').add({
                         -- eg: ["nvi"] for normal, select and insert mode keybinding
                         ["n"] = {
                             -- start compile/recompile, will also open the terminal
-                            ["<C-k>s"] = "require('compile').compile()",
+                            ["<C-k>s"] = "require('compile.term').send_cmd(\"\")",
                             ["<C-k>k"] = "require('compile').next_error()",
                             ["<C-k>K"] = "require('compile').prev_error()",
                             ["<C-k>K"] = "require('compile').next_error()",
@@ -692,7 +686,7 @@ end
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        -- theme = get_ramrem_lualine_theme(true),
+        theme = get_ramrem_lualine_theme(true),
         theme = "auto",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
