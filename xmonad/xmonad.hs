@@ -128,7 +128,7 @@ myKeys = [
   , ("M-<Backspace>",          X.kill)
   , ("M-S-q",                  X.spawn "pkill xmonad")
   , ("M-S-v",                  X.spawn "copyq toggle")
-  , ("M-v",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad --clipmenu")
+  , ("M-v",                    X.spawn "copyq toggle")
   , ("M-c",                    X.spawn "xcolor | xargs -I {} copyq copy {}")
   , ("M-p",                    X.spawn "flameshot gui -c")
   , ("M-S-p",                  X.spawn "flameshot screen -c")
