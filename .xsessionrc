@@ -6,4 +6,3 @@ while [ "$(pgrep -f /usr/bin/pipewire)" = "" ]; do sleep 1; done
 exec /usr/bin/wireplumber &
 while [ "$(pgrep -f /usr/bin/wireplumber)" = "" ]; do sleep 1; done
 exec /usr/bin/pipewire-pulse &
-exec /usr/local/bin/clipmenud &
