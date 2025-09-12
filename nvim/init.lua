@@ -735,7 +735,7 @@ require('lualine').setup {
 
 vim.opt.termguicolors = true
 -- vim.opt.background = "light"
-vim.opt.background = "dark"
+vim.opt.background = "light"
 
 vim.g.komau_italic = false
 vim.g["suda#prompt"] = "Porn folder encryption key: "
@@ -747,8 +747,8 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("base16-everforest-dark-hard") -- use with komari bg
 --vim.cmd.colorscheme("komau") -- cool monochrome theme
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
--- vim.cmd.colorscheme("alabaster") -- i like this theme
-vim.cmd.colorscheme("gruber-darker") -- dark theme
+vim.cmd.colorscheme("alabaster") -- i like this theme
+-- vim.cmd.colorscheme("gruber-darker") -- dark theme
 
 
 -- cpp higlight
