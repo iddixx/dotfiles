@@ -1,0 +1,9 @@
+#!/bin/bash
+# $@ contains: "${bin} -- ${XserverArg}" but all splitted, so $2 may "--"
+# but not for sure. $3 is typically ":1" (display) $4 typically "-nolisten"
+# and so on. Depending on your config settings.
+#
+# do something before
+source $HOME/.xsessionrc
+startx $@
+# do something after
