@@ -48,6 +48,10 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir)
             }
             ,{
+                 from: ".profile"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
                  from: ".stalonetrayrc"
                 ,to: buildNormalizedPath(home_dir)
             }
