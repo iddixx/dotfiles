@@ -1,2 +1,5 @@
 tbsm/000-default-session.desktop
 tbsm/001-last-session.desktop
+copyq/copyq-monitor.ini
+copyq/copyq_geometry.ini
+copyq/copyq_tab_*.dat
