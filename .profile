@@ -9,6 +9,7 @@
 #umask 022
 
 if [ "$(tty)" = "/dev/tty1" ]; then
+    cat /home/domain/.config/tbsm/ascii.txt
     exec /usr/bin/tbsm
 fi
 
