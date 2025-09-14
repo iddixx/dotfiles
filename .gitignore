@@ -3,3 +3,5 @@ tbsm/001-last-session.desktop
 copyq/copyq-monitor.ini
 copyq/copyq_geometry.ini
 copyq/copyq_tab_*.dat
+copyq/copyq_tabs.ini
+copyq/copyq.lock
