@@ -5,6 +5,14 @@
 #
 # do something before
 #
+# Start D-Bus session
+#
+if command -v dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+export $(dbus-launch)
+
 $HOME/.xsessionrc &> /dev/null # i can transfer the output somewhere else, if i'll need that
 startx $@ &> /dev/null
 clear
