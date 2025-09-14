@@ -7,4 +7,6 @@
 #
 $HOME/.xsessionrc &> /dev/null # i can transfer the output somewhere else, if i'll need that
 startx $@ &> /dev/null
+clear
+cat $HOME/.config/tbsm/ascii.txt
 # do something after
