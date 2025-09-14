@@ -21,5 +21,5 @@ void main(string[] args)
     if(clipmenu)
         executeShell("clipmenu -b " ~ cmd);
     else
-        executeShell("dmenu_run " ~ cmd);
+        executeShell("export PATH=$HOME/.local/bin:$PATH ; dmenu_run " ~ cmd);
 }
