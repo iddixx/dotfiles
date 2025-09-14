@@ -4,6 +4,7 @@
 # and so on. Depending on your config settings.
 #
 # do something before
-source $HOME/.xsessionrc
-startx $@
+#
+$HOME/.xsessionrc &> /dev/null # i can transfer the output somewhere else, if i'll need that
+startx $@ &> /dev/null
 # do something after
