@@ -68,6 +68,10 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir ~ "/.local/bin")
             }
             ,{
+                 from: ".vimrc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
                  from: "system24-ram.theme.css"
                 ,to: buildNormalizedPath(home_dir ~ "/.config/vesktop/themes")
             }

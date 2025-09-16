@@ -62,11 +62,11 @@ local colemak_mappings = {
     { modes = { "n", "o", "x" },      lhs = "yi",         rhs = "\"+yi" },
     { modes = { "n", "o", "x" },      lhs = "yy",         rhs = "\"+yy" },
     { modes = { "n", "o", "x" },      lhs = "vi",         rhs = "vi" },
-    { modes = { "n", "o", "x" },      lhs = "di",         rhs = "\"_di" },
-    { modes = { "n", "o", "x" },      lhs = "ca",         rhs = "ca" },
-    { modes = { "n", "o", "x" },      lhs = "ya",         rhs = "\"+ya" },
+    { modes = { "n", "o", "x", "v" }, lhs = "di",         rhs = "\"_di" },
+    { modes = { "n", "o", "x", "v" }, lhs = "ca",         rhs = "\"+ca" },
+    { modes = { "n", "o", "x", "v" }, lhs = "ya",         rhs = "\"+ya" },
     { modes = { "n", "o", "x" },      lhs = "va",         rhs = "va" },
-    { modes = { "n", "o", "x" },      lhs = "da",         rhs = "\"_da" },
+    { modes = { "n", "o", "x", "v" }, lhs = "da",         rhs = "\"_da" },
     { modes = { "n", "o", "x" },      lhs = "gd",         rhs = "gd" },
     { modes = { "o" },                lhs = "i",          rhs = "i" },
     { modes = { "o" },                lhs = "a",          rhs = "a" },
@@ -148,6 +148,7 @@ function colemak_setup(_)
 end
 
 colemak_setup()
+
 -- pckr
 
 local function bootstrap_pckr()
@@ -686,7 +687,7 @@ end
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = get_ramrem_lualine_theme(true),
+        -- theme = get_ramrem_lualine_theme(true),
         theme = "auto",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
@@ -741,8 +742,8 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("base16-everforest-dark-hard") -- use with komari bg
 --vim.cmd.colorscheme("komau") -- cool monochrome theme
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
-vim.cmd.colorscheme("alabaster") -- i like this theme
--- vim.cmd.colorscheme("gruber-darker") -- dark theme
+-- vim.cmd.colorscheme("alabaster") -- i like this theme
+vim.cmd.colorscheme("zaibatsu") -- dark theme
 
 
 -- cpp higlight
