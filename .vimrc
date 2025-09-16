@@ -13,11 +13,14 @@ set laststatus=2
 set virtualedit=all
 set undofile
 set undodir=~/.vim/undo
+
 colorscheme zaibatsu
 call plug#begin()
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
 call plug#end()
 
+"------- Colemak-DH mappings -------
 " Up/down/left/right
 nnoremap n h
 vnoremap n h
@@ -258,23 +261,12 @@ inoremap <C-w>t <C-\><C-n>
 " Note: Disable <C-z> (suspend Vim)
 nnoremap <C-z> <Nop>
 
-" Note: Disable ZQ (quit without saving)
-nnoremap ZQ <Nop>
-
-" Note: <M-d> to lua vim.diagnostic.open_float() cannot be ported; Vim has no Lua integration by default, and no direct equivalent for Neovim diagnostics. Commenting out or replace with a Vim alternative if available (e.g., for errors, but not exact).
-" nnoremap <M-d> <cmd>lua vim.diagnostic.open_float()<CR>
-
 nnoremap ; q:
 
 nnoremap g\| g~
 vnoremap g\| g~
 onoremap g\| g~
 xnoremap g\| g~
-
-" Note: grn, grr, gri appear to be LSP or plugin-specific (e.g., rename normal/range/inline); cannot be ported to vanilla Vim without plugins.
-" nnoremap grn grn
-" nnoremap grr grr
-" nnoremap gri gri
 
 nnoremap g0 g0
 
