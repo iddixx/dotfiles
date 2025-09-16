@@ -1,5 +1,5 @@
 -- vim: ft=haskell
-Config { font     = "Iosevka Fixed SS14 Light 15"
+Config { font     = "Iosevka Fixed SS14 Light 13"
        -- , bgColor  = "#27333e"
        -- , fgColor  = "#cecece"
        , bgColor  = "#000000"
@@ -7,7 +7,7 @@ Config { font     = "Iosevka Fixed SS14 Light 15"
        , overrideRedirect = True
        , lowerOnStart = True
        -- , alpha    = 1000
-       , position = BottomSize L 91 36
+       , position = BottomSize L 92 28
        , iconRoot = "."
        , commands = [ Run Com "bash" ["-c", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'"] "volume" 1
                     , Run Date "%Y-%m-%d %H:%M" "date" 50
