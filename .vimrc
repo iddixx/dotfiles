@@ -1,5 +1,8 @@
 au VimLeave * set guicursor=a:ver100 " beam cursor
-
+autocmd FileType netrw nnoremap <buffer> u gk
+autocmd FileType netrw vnoremap <buffer> u gk
+autocmd FileType netrw onoremap <buffer> u gk
+autocmd FileType netrw xnoremap <buffer> u gk</buffer></buffer></buffer></buffer>
 syntax on
 filetype on
 filetype indent on
