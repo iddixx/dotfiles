@@ -4,7 +4,7 @@
 > If it doesn't work on yours, clone/fork it, and fix it yourself.
 
 # Dependencies and requirements
-- Iosevka Fixed SS14 Font(used almost everywhere)
+- Iosevka Fixed SS14 Font(used almost everywhere) and Iosevka Fixed SS16 Font(used in kitty)
 - rdmd(needed to execute deploy.d, usually comes with dmd compiler)
 - nvim v0.11+(also works on v0.10+)
 - kitty (i've installed v0.41.1)
