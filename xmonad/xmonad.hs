@@ -1,5 +1,5 @@
 import XMonad.Layout.WindowNavigation qualified as WN
-import XMonad.Hooks.InsertPosition (insertPosition, Position(End), Focus(Newer))
+import XMonad.Hooks.InsertPosition (insertPosition, Position(Master), Focus(Newer))
 import XMonad.Layout.Decoration 
 import XMonad.Actions.FloatKeys ( Direction2D(..) )
 import XMonad.Layout.Spacing ( spacing )
@@ -68,7 +68,7 @@ myTabTheme = def {
  }
 
 myManageHook = X.composeAll
-    [ insertPosition End Newer
+    [ insertPosition Master Newer
     , isDialog X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "unityhub" X.--> doCenterFloat
     , X.className X.=? "pavucontrol" X.--> doCenterFloat
