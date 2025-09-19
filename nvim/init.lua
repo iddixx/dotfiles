@@ -688,7 +688,7 @@ require('lualine').setup {
     options = {
         icons_enabled = false,
         -- theme = get_ramrem_lualine_theme(true),
-        theme = "auto",
+        theme = "16color",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
