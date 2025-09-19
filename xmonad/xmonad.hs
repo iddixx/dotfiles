@@ -1,5 +1,6 @@
 import XMonad.Layout.WindowNavigation qualified as WN
 import XMonad.Hooks.InsertPosition (insertPosition, Position(Master), Focus(Newer))
+import XMonad.Layout.FocusTracking
 import XMonad.Layout.Decoration 
 import XMonad.Actions.FloatKeys ( Direction2D(..) )
 import XMonad.Layout.Spacing ( spacing )
@@ -68,8 +69,7 @@ myTabTheme = def {
  }
 
 myManageHook = X.composeAll
-    [ insertPosition Master Newer
-    , isDialog X.--> (doFocus >> doCenterFloat)
+    [ isDialog X.--> (doFocus >> doCenterFloat)
     , X.className X.=? "unityhub" X.--> doCenterFloat
     , X.className X.=? "pavucontrol" X.--> doCenterFloat
     , X.className X.=? "copyq" X.--> (doFocus >> doCenterFloat)
@@ -101,7 +101,7 @@ myConfig = def {
                              X.spawn "picom &" >>
                              X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
-    , X.layoutHook         = smartBorders ( tabbed shrinkText myTabTheme X.||| X.Full X.||| ResizableTall 1 (3/100) (1/2)[])
+    , X.layoutHook         = smartBorders ( focusTracking $ tabbed shrinkText myTabTheme X.||| X.Full X.||| ResizableTall 1 (3/100) (1/2)[])
 }
 
 myKeys = [
