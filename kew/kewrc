@@ -1,0 +1,179 @@
+# Configuration file for kew terminal music player.
+# Make sure that kew is not running before editing this file in order for changes to take effect.
+
+
+[miscellaneous]
+
+path=/home/domain/i1jc1-gilto
+version=3.4.1
+allowNotifications=1
+hideLogo=0
+hideHelp=0
+lastVolume=5
+
+# Cache: Set to 1 to use cache of the music library directory tree for faster startup times.
+cacheLibrary=-1
+
+# Delay when drawing title in track view, set to 0 to have no delay.
+titleDelay=5
+
+# Same as '--quitonstop' flag, exits after playing the whole playlist.
+quitOnStop=0
+
+# Glimmering text on the bottom row.
+hideGlimmeringText=0
+
+# Replay gain check first, can be either 0=track, 1=album or 2=disabled.
+replayGainCheckFirst=0
+
+# Save Repeat and Shuffle Settings.
+saveRepeatShuffleSettings=1
+
+repeatState=0
+
+shuffleEnabled=0
+
+# Set the window title to the title of the currently playing track
+trackTitleAsWindowTitle=1
+
+
+[visualizer]
+
+visualizerEnabled=1
+visualizerHeight=8
+visualizerBrailleMode=0
+
+# How colors are laid out in the spectrum visualizer. 0=lighten, 1=brightness depending on bar height, 2=reversed, 3=reversed darken.
+visualizerColorType=1
+
+# 0=Thin bars, 1=Bars twice the width, 2=Auto (depends on window size).
+visualizerBarWidth=2
+
+
+[progress bar]
+
+# Progress bar in track view
+# The progress bar can be configured in many ways.
+# When copying the values below, be sure to include values that are empty spaces or things will get messed up.
+# Be sure to have the actual uncommented values last.
+# For instance use the below values for a pill muncher mode:
+
+#progressBarElapsedEvenChar= 
+#progressBarElapsedOddChar= 
+#progressBarApproachingEvenChar=•
+#progressBarApproachingOddChar=·
+#progressBarCurrentEvenChar=ᗧ
+#progressBarCurrentOddChar=ᗧ
+
+# To have a thick line: 
+
+#progressBarElapsedEvenChar=━
+#progressBarElapsedOddChar=━
+#progressBarApproachingEvenChar=━
+#progressBarApproachingOddChar=━
+#progressBarCurrentEvenChar=━
+#progressBarCurrentOddChar=━
+
+# To have dots (the original): 
+
+#progressBarElapsedEvenChar=■
+#progressBarElapsedOddChar= 
+#progressBarApproachingEvenChar==
+#progressBarApproachingOddChar= 
+#progressBarCurrentEvenChar=■
+#progressBarCurrentOddChar= 
+
+# Current values: 
+
+progressBarElapsedEvenChar=━
+progressBarElapsedOddChar=━
+progressBarApproachingEvenChar=━
+progressBarApproachingOddChar=━
+progressBarCurrentEvenChar=━
+progressBarCurrentOddChar=━
+
+[colors]
+
+# Use the configuration file colors below
+useConfigColors=1
+
+# Color values are 0=Black, 1=Red, 2=Green, 3=Yellow, 4=Blue, 5=Magenta, 6=Cyan, 7=White
+# These mostly affect the library view.
+
+# Logo color:
+color=5
+
+# Header color in library view:
+artistColor=6
+
+# Now playing song text in library view:
+titleColor=5
+
+# Color of enqueued songs in library view:
+enqueuedColor=5
+
+
+[track cover]
+
+coverEnabled=1
+coverAnsi=0
+
+
+[mouse]
+
+mouseEnabled=1
+
+# Mouse actions are 0=None, 1=Select song, 2=Toggle pause, 3=Scroll up, 4=Scroll down, 5=Seek forward, 6=Seek backward, 7=Volume up, 8=Volume down, 9=Switch to next view, 10=Switch to previous view
+mouseLeftClickAction=0
+mouseMiddleClickAction=1
+mouseRightClickAction=2
+mouseScrollUpAction=3
+mouseScrollDownAction=4
+
+# Mouse action when using mouse scroll + alt
+mouseAltScrollUpAction=9
+mouseAltScrollDownAction=10
+
+
+[key bindings]
+
+volumeUp=+
+volumeUpAlt==
+volumeDown=-
+previousTrackAlt=n
+nextTrackAlt=i
+scrollUpAlt=u
+scrollDownAlt=e
+switchNumberedSong=G
+togglePause=p
+toggleColorsDerivedFrom=c
+toggleVisualizer=v
+toggleAscii=b
+toggleRepeat=r
+toggleShuffle=s
+seekBackward=
+seekForward=	
+savePlaylist=x
+addToFavoritesPlaylist=.
+updateLibrary=U
+moveSongUp=t
+moveSongDown=g
+enqueueAndPlay=^M
+sortLibrary=o
+quit=q
+altQuit=
+
+# Alt keys for the different main views, normally F2-F7:
+showPlaylistAlt=P
+showLibraryAlt=L
+showTrackAlt=T
+showSearchAlt=/
+showKeysAlt=H
+
+# Keys for scrolling page up and page down:
+prevPage=>
+nextPage=<
+
+# For special keys use terminal codes: OS, for F4 for instance. This can depend on the terminal.
+# You can find out the codes for the keys by using tools like showkey.
+# For special keys, see the key value after the bracket "[" after typing "showkey -a" in the terminal and then pressing a key you want info about.

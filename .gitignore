@@ -5,3 +5,5 @@ copyq/copyq_geometry.ini
 copyq/copyq_tab_*.dat
 copyq/copyq_tabs.ini
 copyq/copyq.lock
+kew/*
+!kew/kewrc
