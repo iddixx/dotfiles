@@ -7,13 +7,16 @@ import XMonad.Layout.Spacing ( spacing )
 import XMonad.StackSet qualified as W
 import Data.Map qualified as M
 import XMonad.Util.EZConfig ( mkKeymap )
-import XMonad.Util.Run ( spawnPipe, hPutStrLn )
+import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog -- ( xmobar, def, ppOutput, ppTitle ) 
 import XMonad.Util.Loggers
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Prompt
+import XMonad.Prompt.Shell
 import Prelude
+import Control.Monad
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.NoBorders
 import XMonad.Util.Themes
@@ -24,6 +27,7 @@ import XMonad.Layout.Tabbed
 import qualified Graphics.X11.Xlib.Extras as XL (killClient)
 import Data.Map qualified as M
 import Data.Ratio ()
+import Data.Ratio ((%))
 
 main :: IO ()
 main = do 
@@ -69,9 +73,36 @@ myTabTheme = def {
           , windowTitleIcons    = []
  }
 
+myPromptConfig :: XPConfig
+myPromptConfig = def {
+          font                = "xft:Iosevka Fixed SS14:size=18"
+        , bgColor             = "#000000"
+        , fgColor             = "#FFFFFF"
+        , fgHLight            = "#f85cab"
+        , bgHLight            = "#202020"
+        , borderColor         = "#f85cab"
+        , promptBorderWidth   = 2
+        , position            = CenteredAt (1 % 2) (2 % 3)
+        , height              = 37
+        , historySize         = 256
+        , historyFilter       = id
+        , defaultText         = []
+        , showCompletionOnTab = False
+        , alwaysHighlight     = True
+        , maxComplRows        = Just 8
+}
 
 forceKillWindow :: X.Window -> X.X ()
 forceKillWindow w = X.withDisplay $ \dpy -> X.io (void $ XL.killClient dpy w) 
+
+data CustomShell = CustomShell
+instance XPrompt CustomShell where
+    showXPrompt CustomShell = "please stupid shell (run) => "
+
+customShellPrompt :: XPConfig -> X.X ()
+customShellPrompt c = do
+    cmds <- X.io getCommands
+    mkXPrompt CustomShell c (getShellCompl cmds (searchPredicate c)) (\s -> safeSpawn "/bin/sh" ["-c", s])
 
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
@@ -129,6 +160,7 @@ myKeys = [
   , ("M-C-8", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-C-9", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 8))
   , ("M-r",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
+  , ("M-m", customShellPrompt myPromptConfig)
   , ("M-t",                    X.spawn "kitty")
   , ("M-<Backspace>",          X.kill)
   , ("M-S-<Backspace>",        X.withFocused forceKillWindow)
