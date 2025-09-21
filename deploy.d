@@ -44,6 +44,10 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir)
             }
             ,{
+                 from: ".manpath"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
                  from: ".bash_aliases"
                 ,to: buildNormalizedPath(home_dir)
             }
