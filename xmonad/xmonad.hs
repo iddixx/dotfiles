@@ -1,15 +1,9 @@
-import XMonad.Layout.WindowNavigation qualified as WN
-import XMonad.Hooks.InsertPosition (insertPosition, Position(Master), Focus(Newer))
 import XMonad.Layout.FocusTracking
-import XMonad.Layout.Decoration 
-import XMonad.Actions.FloatKeys ( Direction2D(..) )
-import XMonad.Layout.Spacing ( spacing )
 import XMonad.StackSet qualified as W
 import Data.Map qualified as M
 import XMonad.Util.EZConfig ( mkKeymap )
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog -- ( xmobar, def, ppOutput, ppTitle ) 
-import XMonad.Util.Loggers
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
@@ -21,12 +15,9 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.NoBorders
 import XMonad.Util.Themes
 import XMonad.Actions.CycleWS as CWS
-import System.Exit ( exitSuccess )
 import XMonad qualified as X
 import XMonad.Layout.Tabbed
 import qualified Graphics.X11.Xlib.Extras as XL (killClient)
-import Data.Map qualified as M
-import Data.Ratio ()
 import Data.Ratio ((%))
 
 main :: IO ()
