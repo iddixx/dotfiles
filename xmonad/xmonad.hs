@@ -21,6 +21,7 @@ import XMonad.Actions.CycleWS as CWS
 import System.Exit ( exitSuccess )
 import XMonad qualified as X
 import XMonad.Layout.Tabbed
+import qualified Graphics.X11.Xlib.Extras as XL (killClient)
 import Data.Map qualified as M
 import Data.Ratio ()
 
@@ -67,6 +68,10 @@ myTabTheme = def {
           , windowTitleAddons   = []
           , windowTitleIcons    = []
  }
+
+
+forceKillWindow :: X.Window -> X.X ()
+forceKillWindow w = X.withDisplay $ \dpy -> X.io (void $ XL.killClient dpy w) 
 
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
@@ -126,6 +131,7 @@ myKeys = [
   , ("M-r",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
   , ("M-t",                    X.spawn "kitty")
   , ("M-<Backspace>",          X.kill)
+  , ("M-S-<Backspace>",        X.withFocused forceKillWindow)
   , ("M-S-q",                  X.spawn "pkill xmonad")
   , ("M-S-v",                  X.spawn "copyq toggle")
   , ("M-v",                    X.spawn "copyq toggle")
