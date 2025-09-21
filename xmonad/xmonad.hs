@@ -92,6 +92,11 @@ myPromptConfig = def {
         , maxComplRows        = Just 8
 }
 
+myCopyPromptConfig :: XPConfig
+myCopyPromptConfig = myPromptConfig {
+    borderColor = "#5cf8aa"
+}
+
 forceKillWindow :: X.Window -> X.X ()
 forceKillWindow w = X.withDisplay $ \dpy -> X.io (void $ XL.killClient dpy w) 
 
@@ -103,6 +108,15 @@ customShellPrompt :: XPConfig -> X.X ()
 customShellPrompt c = do
     cmds <- X.io getCommands
     mkXPrompt CustomShell c (getShellCompl cmds (searchPredicate c)) (\s -> safeSpawn "/bin/sh" ["-c", s])
+
+data CopyShell = CopyShell
+instance XPrompt CopyShell where
+    showXPrompt CopyShell = "please stupid shell (copy) => " 
+
+copyShellPrompt :: XPConfig -> X.X ()
+copyShellPrompt c = do
+    cmds <- X.io getCommands
+    mkXPrompt CopyShell c (getShellCompl cmds (searchPredicate c)) (\s -> X.spawn $ "" ++ s ++ " | xargs -I {} copyq copy {}")   
 
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
@@ -161,6 +175,7 @@ myKeys = [
   , ("M-C-9", (X.windows $ W.shift $ myWorkspaces !! 4) X.<+> (X.windows $ W.greedyView $ myWorkspaces !! 8))
   , ("M-r",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
   , ("M-m", customShellPrompt myPromptConfig)
+  , ("M-C-m", copyShellPrompt myCopyPromptConfig)
   , ("M-t",                    X.spawn "kitty")
   , ("M-<Backspace>",          X.kill)
   , ("M-S-<Backspace>",        X.withFocused forceKillWindow)
