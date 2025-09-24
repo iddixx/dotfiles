@@ -9,6 +9,7 @@ filetype indent on
 set number         
 set relativenumber 
 set cursorline     
+set hlsearch
 set t_Co=256
 set showcmd!
 set cmdheight=1
