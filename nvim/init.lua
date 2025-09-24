@@ -87,8 +87,8 @@ local colemak_mappings = {
     { modes = { "v" },                lhs = "B",          rhs = "A" },
 
     -- Search
-    { modes = { "n", "o", "x" },      lhs = "k",          rhs = "n" },
-    { modes = { "n", "o", "x" },      lhs = "K",          rhs = "N" },
+    { modes = { "n", "o", "x", "v" },      lhs = "k",          rhs = "n" },
+    { modes = { "n", "o", "x", "v" },      lhs = "K",          rhs = "N" },
 
     -- Window navigation
     { modes = { "n" },                lhs = "<C-w>n",     rhs = "<C-w>h" },
@@ -121,7 +121,7 @@ function colemak_apply()
             mapping.modes,
             mapping.lhs,
             mapping.rhs,
-            { desc = mapping.desc }
+            { desc = mapping.desc, noremap = true }
         )
     end
 end
