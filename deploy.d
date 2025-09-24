@@ -1,4 +1,4 @@
-#!/usr/bin/rdmd
+#!/usr/bin/env rdmd
 import std.string;
 import std.stdio;
 import std.process;

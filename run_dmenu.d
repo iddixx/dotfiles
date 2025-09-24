@@ -1,4 +1,4 @@
-#!/bin/rdmd
+#!/usr/bin/env rdmd
 import std.process;
 import std.getopt;
 import std.stdio;
