@@ -85,7 +85,8 @@ myPromptConfig = def {
 
 myCopyPromptConfig :: XPConfig
 myCopyPromptConfig = myPromptConfig {
-    borderColor = "#5cf8aa"
+          borderColor = "#5cf8aa"
+        , fgHLight    = "#5cf8aa"
 }
 
 forceKillWindow :: X.Window -> X.X ()
