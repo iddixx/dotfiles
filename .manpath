@@ -1,1 +1,1 @@
-DEFINE pager nvim +Man!
+DEFINE pager vim +MANPAGER -
