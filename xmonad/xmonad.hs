@@ -99,7 +99,7 @@ instance XPrompt CustomShell where
 customShellPrompt :: XPConfig -> X.X ()
 customShellPrompt c = do
     cmds <- X.io getCommands
-    mkXPrompt CustomShell c (getShellCompl cmds (searchPredicate c)) (\s -> safeSpawn "/bin/sh" ["-c", s])
+    mkXPrompt CustomShell c (getShellCompl cmds (searchPredicate c)) (\s -> safeSpawn "/bin/env" ["-S", "bash", "-c", s])
 
 data CopyShell = CopyShell
 instance XPrompt CopyShell where
@@ -108,7 +108,7 @@ instance XPrompt CopyShell where
 copyShellPrompt :: XPConfig -> X.X ()
 copyShellPrompt c = do
     cmds <- X.io getCommands
-    mkXPrompt CopyShell c (getShellCompl cmds (searchPredicate c)) (\s -> X.spawn $ "" ++ s ++ " | xargs -I {} copyq copy {}")   
+    mkXPrompt CopyShell c (getShellCompl cmds (searchPredicate c)) (\s -> X.spawn $ "/bin/env -S bash " ++ s ++ " | xargs -I {} copyq copy {}")   
 
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
