@@ -302,7 +302,7 @@ require('pckr').add({
                         -- eg: ["nvi"] for normal, select and insert mode keybinding
                         ["n"] = {
                             -- start compile/recompile, will also open the terminal
-                            ["<C-k>s"] = "require('compile.term').send_cmd(\"\")",
+                            ["<C-k>s"] = "require('compile').compile('')",
                             ["<C-k>k"] = "require('compile').next_error()",
                             ["<C-k>K"] = "require('compile').prev_error()",
                             ["<C-k>K"] = "require('compile').next_error()",
