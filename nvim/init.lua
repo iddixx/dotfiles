@@ -283,6 +283,8 @@ require('pckr').add({
                     -- 3 stands for col number (can be omitted if the language doesn't support)
                     -- For example: col:filename:row will be "312" instead
                     rust = { "(%S+):(%d+):(%d+)", "123" },
+                    grep = { "(%S+):(%d+):", "12" },
+                    dlang = { "(%S+)%((%d+)%):", "12" },
                     Makefile = { "%[(%S+):(%d+):.+%]", "12" },
                     -- I will also add more regex for different error types soon
                 },
