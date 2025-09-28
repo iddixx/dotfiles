@@ -4,7 +4,7 @@ import std.getopt;
 import std.stdio;
 import std.uni;
 
-void main(string[] args)
+int main(string[] args)
 {
     string cmd = "-fn 'Iosevka Fixed SS14 SemiBold:pixelsize=25:antialias=true' ";
     bool clipmenu = false;
@@ -19,7 +19,7 @@ void main(string[] args)
     else if(toLower(theme) == "xmonad")
         cmd ~= "-nb '#000000' -nf '#FFFFFF' -sb '#6881b5' -sf '#000000'";
     if(clipmenu)
-        executeShell("clipmenu -b " ~ cmd);
+        return executeShell("clipmenu -b " ~ cmd).status;
     else
-        executeShell("export PATH=$HOME/.local/bin:$PATH ; dmenu_run " ~ cmd);
+        return executeShell("export PATH=$HOME/.local/bin:$PATH ; dmenu_run " ~ cmd).status;
 }
