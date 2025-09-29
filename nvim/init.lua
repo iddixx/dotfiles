@@ -113,6 +113,9 @@ local colemak_mappings = {
     { modes = { "n" },                lhs = "g0",          rhs = "g0" },
     { modes = { "v" },                lhs = ">",           rhs = ">gv" },
     { modes = { "v" },                lhs = "<",          rhs = "<gv" },
+    { modes = { "n" },                lhs = "<C-h>h",          rhs = "<cmd>lua require('haskell-tools').hoogle.hoogle_signature()<CR>" },
+    { modes = { "n" },                lhs = "<C-h>rp",          rhs = "<cmd>lua require('haskell-tools').repl.toggle()<CR>" },
+    { modes = { "n" },                lhs = "<C-h>rb",          rhs = "<cmd>lua require('haskell-tools').repl.toggle(vim.api.nvim_buf_get_name(0))<CR>" },
 }
 
 function colemak_apply()
@@ -176,7 +179,12 @@ require('pckr').add({
 
     --lsp related stuff--
     { 'neoclide/coc.nvim', branch = 'release' },
-    'neovim/nvim-lspconfig',
+    { 'neovim/nvim-lspconfig' },
+    {
+        'mrcjkb/haskell-tools.nvim',
+        version = '^6', -- Recommended
+    },
+
 
     --syntax highlight--
     'bfrg/vim-c-cpp-modern',
@@ -191,7 +199,7 @@ require('pckr').add({
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- Add your treesitter configuration options here
-                ensure_installed = { "gleam", "ada" },
+                ensure_installed = { "gleam", "ada", "haskell" },
                 highlight = {
                     enable = true,
                 },
@@ -506,7 +514,6 @@ end
 --[[ Plugins Setup ]]
 
 --require("smear_cursor").toggle()
-
 
 --[[ LSP Setup ]]
 
