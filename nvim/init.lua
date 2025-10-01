@@ -697,7 +697,7 @@ require('lualine').setup {
     options = {
         icons_enabled = false,
         -- theme = get_ramrem_lualine_theme(true),
-        theme = "16color",
+        theme = "auto",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -752,7 +752,7 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("komau") -- cool monochrome theme
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
 -- vim.cmd.colorscheme("alabaster") -- i like this theme
-vim.cmd.colorscheme("zaibatsu") -- dark theme
+vim.cmd.colorscheme("evening") -- dark theme
 
 
 -- cpp higlight
