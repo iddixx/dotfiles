@@ -12,7 +12,12 @@ Config { font     = "Iosevka Fixed SS14 Light 13"
        , commands = [ Run Com "bash" ["-c", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'"] "volume" 1
                     , Run Date "%Y-%m-%d %H:%M" "date" 50
                     , Run Com "/home/domain/dotfiles/xmobar/battery.d" [] "battery" 5
-                    , Run Com "xkb-switch" [] "layout" 5 
+                    -- , Run Com "xkb-switch" [] "layout" 5 
+                    , Run Kbd [
+                        ("us(colemak_dh_ortho)", "burgerland"),
+                        ("ru(diktor)", "vodka"),
+                        ("ua(diktor)", "salo")
+                    ]
                     , Run Com "/home/domain/dotfiles/xmobar/brightness_ctl.d" [] "brightness" 1 
                     , Run Com "/home/domain/dotfiles/xmobar/network.d" [] "wifi" 5 
                     , Run XMonadLog 
@@ -20,5 +25,5 @@ Config { font     = "Iosevka Fixed SS14 Light 13"
                     ]
        , sepChar  = "!"
        , alignSep = "}{"
-       , template = "<fc=#00FF00>!XMonadLog!</fc> <fc=#636363>|</fc> !date! <fc=#636363>|</fc> !battery! <fc=#636363>|</fc> VOL: !volume! <fc=#636363>|</fc> !wifi! <fc=#636363>|</fc> BRI: !brightness!% <fc=#636363>|</fc> !layout!}{ "
+       , template = "<fc=#00FF00>!XMonadLog!</fc> <fc=#636363>|</fc> !date! <fc=#636363>|</fc> !battery! <fc=#636363>|</fc> VOL: !volume! <fc=#636363>|</fc> !wifi! <fc=#636363>|</fc> BRI: !brightness!% <fc=#636363>|</fc> !kbd!}{ "
        }
