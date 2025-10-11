@@ -187,7 +187,6 @@ require('pckr').add({
 
 
     --syntax highlight--
-    'bfrg/vim-c-cpp-modern',
     'gleam-lang/gleam.vim',
     {
         'nvim-treesitter/nvim-treesitter',
@@ -199,7 +198,7 @@ require('pckr').add({
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- Add your treesitter configuration options here
-                ensure_installed = { "gleam", "ada", "haskell" },
+                ensure_installed = { "gleam", "ada", "haskell", "cpp", "c" },
                 highlight = {
                     enable = true,
                 },
