@@ -469,6 +469,29 @@ require('pckr').add({
     'ntk148v/komau.vim',
     'andreypopp/vim-colors-plain',
     {
+        'wtfox/jellybeans.nvim',
+        config = function() 
+            require('jellybeans').setup({
+                    transparent = false,
+                    italics = false,
+                    bold = true,
+                    flat_ui = true, -- toggles "flat UI" for pickers
+                    -- background = {
+                    --     dark = "jellybeans", -- default dark palette
+                    --     light = "jellybeans_light", -- default light palette
+                    -- },
+                    plugins = {
+                        all = false,
+                        auto = true, -- will read lazy.nvim and apply the colors for plugins that are installed
+                    },
+                    -- on_highlights = function(highlights, colors)
+                    -- end,
+                    -- on_colors = function(colors)
+                    -- end,
+                })
+        end,
+    },
+    {
         'iddixx/gruber-darker.nvim',
         config = function()
             require("gruber-darker").setup({
@@ -739,7 +762,7 @@ require('lualine').setup {
 
 vim.opt.termguicolors = true
 -- vim.opt.background = "light"
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
 vim.g.komau_italic = false
 vim.g["suda#prompt"] = "Porn folder encryption key: "
@@ -752,7 +775,7 @@ vim.g["suda#prompt"] = "Porn folder encryption key: "
 --vim.cmd.colorscheme("komau") -- cool monochrome theme
 --vim.cmd.colorscheme("plain") -- other cool monochrome theme
 -- vim.cmd.colorscheme("alabaster") -- i like this theme
-vim.cmd.colorscheme("evening") -- dark theme
+vim.cmd.colorscheme("jellybeans-mono") -- dark theme
 
 
 -- cpp higlight
