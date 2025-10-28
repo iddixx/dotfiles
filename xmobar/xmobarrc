@@ -10,7 +10,8 @@ Config { font     = "Iosevka Fixed SS14 Light 13"
        , position = BottomSize L 92 28
        , iconRoot = "."
        , commands = [ Run Com "bash" ["-c", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'"] "volume" 1
-                    , Run Date "%Y-%m-%d %H:%M" "date" 50
+                    , Run Com "date" ["-u", "+%Y-%m-%d %H:%M"] "date" 50 -- utc time
+                    -- , Run Date "%Y-%m-%d %H:%M" "date" 50 -- non utc time
                     , Run Com "/home/domain/dotfiles/xmobar/battery.d" [] "battery" 5
                     -- , Run Com "xkb-switch" [] "layout" 5 
                     , Run Kbd [
@@ -20,10 +21,10 @@ Config { font     = "Iosevka Fixed SS14 Light 13"
                     ]
                     , Run Com "/home/domain/dotfiles/xmobar/brightness_ctl.d" [] "brightness" 1 
                     , Run Com "/home/domain/dotfiles/xmobar/network.d" [] "wifi" 5 
-                    , Run XMonadLog 
-                    , Run StdinReader
+                    , Run UnsafeXMonadLog 
+                    , Run UnsafeStdinReader
                     ]
        , sepChar  = "!"
        , alignSep = "}{"
-       , template = "<fc=#00FF00>!XMonadLog!</fc> <fc=#636363>|</fc> !date! <fc=#636363>|</fc> !battery! <fc=#636363>|</fc> VOL: !volume! <fc=#636363>|</fc> !wifi! <fc=#636363>|</fc> BRI: !brightness!% <fc=#636363>|</fc> !kbd!}{ "
+       , template = "<fc=#00FF00>!UnsafeXMonadLog!</fc> <fc=#636363>|</fc> !date! <fc=#636363>|</fc> !battery! <fc=#636363>|</fc> VOL: !volume! <fc=#636363>|</fc> !wifi! <fc=#636363>|</fc> BRI: !brightness!% <fc=#636363>|</fc> !kbd!}{ "
        }
