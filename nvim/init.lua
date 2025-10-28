@@ -198,7 +198,7 @@ require('pckr').add({
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- Add your treesitter configuration options here
-                ensure_installed = { "gleam", "ada", "haskell", "cpp", "c" },
+                ensure_installed = { "gleam", "ada", "haskell", "cpp", "c", "bash", "d" },
                 highlight = {
                     enable = true,
                 },

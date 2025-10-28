@@ -1,14 +1,15 @@
 {
    "rpc.detailsEditing": "In {workspace_folder}"
   ,"rpc.showProblems": false
-  ,"rpc.lowerDetailsEditing": "Editing {file_name}"
+  ,"rpc.lowerDetailsEditing": "Dirtying {file_name}"
   ,"rpc.problemsText": " "
   ,"rpc.detailsViewing": "In {workspace_folder}"
-  ,"rpc.lowerDetailsViewing": "Viewing {file_name}"
+  ,"rpc.lowerDetailsViewing": "Eyeballing {file_name}"
   ,"rpc.lowerDetailsNotFound": "untitled folder"
-  ,"rpc.workspaceElapsedTime": true
+  ,"rpc.workspaceElapsedTime": false
   ,"diagnostic.enable": true
   ,"clangd.arguments": ["--background-index"]
+  ,"clangd.fallbackFlags": [ "-std=c++23" ]
   ,"clangd.disableDiagnostics": true
   ,"inlayHint.enable": false
   ,"languageserver": {
