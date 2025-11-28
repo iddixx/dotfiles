@@ -131,3 +131,4 @@ export PATH=$PATH:/home/domain/.spicetify
 export PATH=/home/domain/.nimble/bin:$PATH
 
 [ -f "/home/domain/.ghcup/env" ] && . "/home/domain/.ghcup/env" # ghcup-env
+source -- ~/.local/share/blesh/ble.sh
