@@ -459,6 +459,14 @@ require('pckr').add({
     },
 
     'lambdalisue/vim-suda', -- saving files with sudo
+
+    {
+        "gruvw/strudel.nvim",
+        run = "npm install",
+        config = function()
+            require("strudel").setup()
+        end,
+    },
     -- [[ Themes ]] -- 
     'iddixx/alabaster-bold.nvim',           -- my fork of p00f/alabaster.nvim
     'estheruary/nvim-colorscheme-lavender', -- use with ai bg
