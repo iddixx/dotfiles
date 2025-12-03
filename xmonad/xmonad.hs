@@ -19,10 +19,12 @@ import XMonad qualified as X
 import XMonad.Layout.Tabbed
 import qualified Graphics.X11.Xlib.Extras as XL (killClient)
 import Data.Ratio ((%))
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.ClickableWorkspaces
 
 main :: IO ()
 main = do 
-    X.xmonad . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) toggleStrutsKey $ myConfig
+    X.xmonad . ewmh . withEasySB (statusBarProp "xmobar" (clickablePP myXmobarPP)) toggleStrutsKey $ myConfig
     where 
         toggleStrutsKey :: X.XConfig X.Layout -> (X.KeyMask, X.KeySym)
         toggleStrutsKey X.XConfig{ X.modMask = m } = (m, X.xK_Tab)
@@ -137,11 +139,12 @@ myConfig = def {
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
                              -- X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/ascii/16_10/" >>
-                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/ramxmonad_yuki-neh1610.png" >>
+                             X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/digged_16_10.png" >>
+                             -- X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/ramxmonad_yuki-neh1610.png" >>
                              X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh_ortho,diktor,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
                              X.spawn "copyq &" >>
-                             X.spawn "picom &" >>
-                             X.spawn "flameshot &"
+                             X.spawn "picom &" -- >>
+                             -- X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
     , X.layoutHook         = smartBorders ( focusTracking $ tabbed shrinkText myTabTheme X.||| X.Full X.||| ResizableTall 1 (3/100) (1/2)[])
 }
@@ -175,10 +178,10 @@ myKeys = [
   , ("M-S-v",                  X.spawn "copyq toggle")
   , ("M-v",                    X.spawn "copyq toggle")
   , ("M-c",                    X.spawn "xcolor | xargs -I {} copyq copy {}")
-  , ("M-p",                    X.spawn "flameshot gui -c")
-  , ("M-S-p",                  X.spawn "flameshot screen -c")
-  , ("<Print>",                X.spawn "flameshot gui -c")
-  , ("S-<Print>",              X.spawn "flameshot screen -c")
+  , ("M-p",                    X.spawn "maim -s | xclip -selection clipboard -t image/png")
+  , ("M-S-p",                  X.spawn "maim | xclip -selection clipboard -t image/png")
+  , ("<Print>",                X.spawn "maim -s | xclip -selection clipboard -t image/png")
+  , ("S-<Print>",              X.spawn "maim | xclip -selection clipboard -t image/png")
   , ("<XF86AudioLowerVolume>", X.spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
   , ("<XF86AudioRaiseVolume>", X.spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
   , ("S-<XF86AudioLowerVolume>", X.spawn "brightnessctl set 1%-")
