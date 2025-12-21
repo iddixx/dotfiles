@@ -32,6 +32,21 @@
 - maim
 - boomer(zoomer application)
 - xcolor
+## XMonad-specific configuration dependencies
+- XMonad 0.17.0+
+- xmobar 0.48.0+
+- stalonetray
+- unclutter-xfixes
+- copyq
+- picom v1.12.0+
+- pactl
+- awk
+- brightnessctl
+- xkb-switch
+- NetworkManager
+- maim
+- boomer(zoomer application)
+- xcolor
 
 # Deployment
 
