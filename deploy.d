@@ -76,6 +76,10 @@ conf_s get_config()
                 ,to: buildNormalizedPath(home_dir)
             }
             ,{
+                 from: ".blerc"
+                ,to: buildNormalizedPath(home_dir)
+            }
+            ,{
                  from: "system24-ram.theme.css"
                 ,to: buildNormalizedPath(home_dir ~ "/.config/vesktop/themes")
             }
@@ -135,6 +139,22 @@ void main(string[] args)
     }
 
     link_by_config(get_config(), ParameterDefaults!link_by_config[1], !f_skip_conflicting);
+
+    // --------NOT TESTED --------//
+    string blesh = buildNormalizedPath(home_dir ~ "/.local/share/blesh/ble.sh");
+    bool is_blesh_installed = exists(blesh);
+    if(!is_blesh_installed) 
+    {
+        executeShell("wget -O - https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -");
+        executeShell("bash ble-nightly/ble.sh --install ~/.local/share");
+        executeShell("echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc");
+    }
+    else
+    {
+        writeln("ble.sh is already installed!");
+    }
+    // --------NOT TESTED--------//
+
 }
 
 void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true)
