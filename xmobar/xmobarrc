@@ -13,7 +13,6 @@ Config { font     = "Iosevka Fixed SS14 Light 13"
                     -- , Run Com "date" ["-u", "+%Y-%m-%d %H:%M"] "date" 50 -- utc time
                     , Run Date "%Y-%m-%d %H:%M" "date" 50 -- non utc time
                     , Run Com "/home/domain/dotfiles/xmobar/battery.d" [] "battery" 5
-                    -- , Run Com "xkb-switch" [] "layout" 5 
                     , Run Kbd [
                         ("us(colemak_dh_ortho)", "burgerland"),
                         ("ru(diktor)", "vodka"),

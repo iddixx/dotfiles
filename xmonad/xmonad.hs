@@ -110,7 +110,7 @@ instance XPrompt CopyShell where
 copyShellPrompt :: XPConfig -> X.X ()
 copyShellPrompt c = do
     cmds <- X.io getCommands
-    mkXPrompt CopyShell c (getShellCompl cmds (searchPredicate c)) (\s -> X.spawn $ "/bin/env -S bash " ++ s ++ " | xargs -I {} copyq copy {}")   
+    mkXPrompt CopyShell c (getShellCompl cmds (searchPredicate c)) (\s -> X.spawn $ "/bin/env -S bash " ++ s ++ " | xargs -I {} /usr/bin/copyq copy {}")   
 
 myManageHook = X.composeAll
     [ isDialog X.--> (doFocus >> doCenterFloat)
