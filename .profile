@@ -33,3 +33,7 @@ fi
 . "$HOME/.cargo/env"
 
 [ -f "/home/domain/.ghcup/env" ] && . "/home/domain/.ghcup/env" # ghcup-env
+
+QT_QPA_PLATFORM_THEME=qt6ct
+
+export GPG_TTY=$(tty)
