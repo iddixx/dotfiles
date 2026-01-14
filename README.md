@@ -50,7 +50,7 @@
 
 # Deployment
 
-> [!WARNING]
+> [!CAUTION]
 > It will `rm -rf` all your configs, that conflict with mine.
 > If you don't want this to happen, run `deploy.d` with `--skip-conflicting` flag.
 
