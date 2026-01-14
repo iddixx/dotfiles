@@ -1,0 +1,2 @@
+;; Generated package description from d-mode.el  -*- no-byte-compile: t -*-
+(define-package "d-mode" "202408131340" "D Programming Language major mode for (X)Emacs" '((emacs "25.1")) :commit "688f5af819e461badfd6fda642937153b4946813" :url "https://elpa.nongnu.org/nongnu/d-mode.html" :maintainer '(("Russel Winder" . "russel@winder.org.uk") ("Vladimir Panteleev" . "vladimir@thecybershadow.net")) :keywords '("d" "programming" "language" "emacs" "cc-mode"))

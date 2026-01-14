@@ -1,0 +1,124 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/domain/Programming/devres/" . "snake_fasm/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/" . "src/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/" . "lang/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/" . "pzsmp/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/" . "assets/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/models/" . "item/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/" . "client/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/" . "item/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/" . "pzsmp/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/" . "com/")
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/" . "resources/")
+ ("/home/domain/Programming/inspecting/" . "fabric_mod_1.21.9/")
+ ("/home/domain/Programming/" . "devres/")
+ ("/home/domain/music/Cold Carti(Lossless)/" . "Cold Carti - всегда ненавидел быть слабым/")
+ ("/home/domain/music/" . "Cold Carti(Lossless)/")
+ ("/home/" . "domain/")
+ ("/home/domain/.emacs.d/" . "auto-save-list/")
+ ("/home/domain/" . "Programming/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/domain/Programming/devres/snake_fasm/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/item/"
+ "/home/domain/.emacs.d/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/register/tool_materials/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/register/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/lang/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/models/item/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/client/java/com/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/client/"
+ "/home/domain/Programming/inspecting/fabric_mod_1.21.9/"
+ "/home/domain/music/"
+ "/home/domain/dotfiles/"
+ "/home/domain/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "main.asm"
+ "init.el"
+ "PZSMP.java"
+ "KnifeItem.java"
+ "simpc-mode.el"
+ "main.c"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/domain/Programming/devres/snake_fasm/" (26982 50454 439052 331000) "main" "#main.asm#" "main.asm~" "../" "main.asm" "./" ".#main.asm")
+
+ ("/home/domain/" (26982 49120 141452 650000) ".java/" "ViberDownloads/" "UI" "mapple_questions" ".var/" "books/" "2025-10-22 23-42-40.mp4" "ogrizok.mp3" ".password-store/" "shef.png" "et" "򰍌嗉" ".dvdcss/" ".spicetify/" "682969-2024-2025-syllabus-update.pdf" ".nvm/" "0" ".ratpoisonrc" ".git-credentials" ".notion/" ".ServiceHub/" ".emacs.d/" ".Xauthority" "makedeb_pkgs/" ".minecraft/" "boomer/" "lemonbar-xft/" "nohup.out" "stumpwm-build/" "personal/" ".vim/" "CopperWelder-Java-Skin.zip" ".cargo/" "script.d" "questions" "stumpwm.log" ".manpath" ".gnupg/" "#*message*-20251223-104633#" "playlists/" "replay.sav" "message.txt" ".concalcvariables" "unfinished meme.png" "clipmenu-build/" "PortProton/" ".gtkrc-2.0" ".bash_logout" ".npm/" "tl" "Downloads/" "main.c" "diktor_ua/" ".steampath" "waifu.im_3026.png" "text" ".zoom/" "install.log" "copper/" "en" "vpnconfigs/" ".cursor/" ".pki/" ".gradle/" "quicklisp/" "tfc.d" ".ssh/" ".cabal/" "decoder.d" "hs_err_pid29723.log" "spermobak.txt" ".wget-hsts" ".ViberPC/" "finished meme.png" ".rustup/" "garbage/" "ble-nightly/" "ly/" "stumpwm.ros" "Unity/" ".cache/" ".steam/" ".inputrc" "dotfiles/" "file.d" ".gvfs/" ".vscode/" ".blerc" ".mozilla/" "veadotube/" "䀀Q" "xdg-desktop-portal-termfilechooser/" "Spicetify-Throwback/" "p" "waifu.im_3026-ascii-art.png" ".wine/" ".zen/" "cool_neko.jpeg" "14" "music/" "Programming/" ".cristalix/" "need_todo" ".choosenim/" ".vimrc" ".nimble/" "test.d" ".simplex/" ".sbclrc" "dboob/" "shutdowninfo.txt" ".Salwyrr/" "#main.c#" ".paradoxlauncher/" "Apotris.sav" ".gitconfig" ".android/" "file" "spicetify-themes/" "android-as-monitor-linux/" "obs_things/" ".stalonetrayrc" "-2y" "㡰⍢嘠" "main.cs" "amine-ascii-art.png" ".sqlite_history" ".bashrc" ".python_history" ".stack/" "xkb-switch/" ".ratpoison_history" "arlekion_questions" "huyuwu_blya" "StrudelREPL-linux-x64/" "error.log" ".asdf/" ".mono/" "GE>" ".profile" "untitled.mp3.log" "Minecraft/" ".openjfx/" "colemak_dh_ansi_us.xmodmap" "Sync/" ".plastic4/" "stocking-ascii-art.png" "Desktop/" ".dmenu_history" "apotris/" "simplex_v1_chat.db" ".viminfo" ".bash_aliases" "⨠碨喂" "̐" "几ロ啬" "calculations_prelast" "ratpoison/" "kir-ascii-art.png" ".renpy/" "ram_yuki-neh_xmonad1610.png/" "tbsm-build/" "lmms/" ".roswell/" "t" ".config/" ".node_repl_history" "dmenu-build/" "rempurple.txt" ".xsessionrc" "hs_err_pid20666.log" "琯畲瑥灹Q" "#*message*-20251104-222412#" "Screenshots/" ".cargo_target/" ".steampid" ".nuget/" "tulizu-build/" "Config.hs" ".guix-profile/" ".tor/" "tetrio-desktop-9.0.0/" "ps" "stumpwm.log.1" "ryouascii.txt" ".xsession-errors" ".fonts/" "текстовы_документ" "rgb_biome" "words.txt" ".local/" ".lmmsrc.xml" "digged.jpg" ".ghc/" ".cert/" ".swp" "a.out" ".dbus/" "words" "main.java" "2025-10-22 23-43-15.mp4" ".ghcup/" "2025-10-18 02-31-16.mp4" ".fehbg" ".m2/" "Ada.png" "zefir_questions" "Enchantio-1.13.1.jar" ".dotnet/" "2025-10-22 23-21-40.mp4" "mount_cd.sh" ".bash_history" "formula.txt" "kir.png" ".ICEauthority" "generate_ascii.d" "go/" "2025-11-07 23-20-05.mp4" "i1jc1-gilto/" ".nvim/" "bg.jpg" "2025-10-18 02-31-18.mp4" ".veadotube/" "isos/" "tosaka_rin_waifu.im.jpeg" "Videos/" ".als/" "../" "./")
+
+ ("/home/domain/Programming/devres/" (26968 11572 32742 229000) "simari/" "rle/" "hstest/" "orbit/" "../" "alabaster-bold.nvim/" "snake_fasm/" "Pizooria/" "./" "Pizooria.bak/")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/lang/" (26966 54631 375675 636000) "en_us.json~" "rpr.json~" "ru_ru.json" "rpr.json" "uk_ua.json~" "../" "en_us.json" "ru_ru.json~" "uk_ua.json" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/item/" (26968 2325 863548 941000) "#KnifeItem.java#" "../" "KnifeItem.java" "KnifeItem.java~" "./")
+
+ ("/home/domain/.emacs.d/" (26968 2392 804889 723000) "recentf" "ido.last" "transient/" "menhera_chan_sticker.gif" "#init.el#" "games/" ".cache/" "eclipse.jdt.ls/" "eln-cache/" "init.el~" "../" "url/" "ido.last~" "auto-save-list/" "elpa/" "init.el" "blueanime_for_pfp.png" "persist/" ".#init.el" "lisp/" "request/" "./" "emms/")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/register/tool_materials/" (26966 53688 54830 566000) "#IronKnifeMaterial.java#" "../" ".#IronKnifeMaterial.java" "IronKnifeMaterial.java" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/register/" (26966 51829 197561 557000) ".#ItemRegister.java" "#ItemRegister.java#" "../" "ItemRegister.java~" "ItemRegister.java" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/" (26966 46612 988979 629000) "pzsmp.mixins.json~" "fabric.mod.json" "../" "pzsmp.mixins.json" "assets/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/" (26938 16186 0 0) "../" "pzsmp/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/" (26966 49670 930289 567000) "icon.png" "models/" "../" "items/" "textures/" "lang/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/items/" (26966 49708 975052 343000) "knife_item.json~" "../" "./" "knife_item.json")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/models/item/" (26966 49451 777895 687000) "../" "./" "knife_item.json")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/assets/pzsmp/models/" (26966 49307 427001 536000) "knife_item.json~" "../" "./" "knife_item.json")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/resources/textures/" (26966 46557 931875 766000) "../" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/client/java/com/" (26938 16186 0 0) "../" "pzsmp/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/client/java/com/pzsmp/" (26938 16186 0 0) "PZSMPDataGenerator.java" "PZSMPClient.java" "../" "mixin/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/client/" (26938 16186 0 0) "java/" "../" "resources/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/pzsmp/" (26966 43285 618267 782000) "item/" "PZSMP.java~" "../" "mixin/" "register/" "PZSMP.java" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/com/" (26938 16186 0 0) "../" "pzsmp/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/java/" (26938 16186 0 0) "com/" "../" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/main/" (26938 16186 0 0) "java/" "../" "resources/" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/src/" (26938 16186 0 0) "main/" "../" "client/" "./")
+
+ ("/home/domain/dotfiles/" (26955 57062 153785 934000) ".password-store/" "xmonad/" ".ratpoisonrc" ".emacs.d/" "boomer/" ".manpath" "cava/" "system24-ram.theme.css" ".inputrc" "flameshot/" ".git/" ".gitignore" "../" ".vimrc" "xmobar/" "tbsm/" ".stalonetrayrc" "nvim/" "deploy.d" ".bashrc" "spicetify/" "copyq/" "bgs/" ".profile" "herbstluftwm/" "run_dmenu.d" ".bash_aliases" "README.md" "polybar/" ".xsessionrc" "system24-darker.theme.css" "LICENSE" "gitu/" "picom/" "neowofetch/" "barpyrus/" "./" "kew/" "kitty/" "ufetch")
+
+ ("/home/domain/music/" (26953 22012 323379 76000) "курящих нет(Lossless)/" "Miraidempa — Strobo.mp3" "image-7.png" "bandera.png" "Miraidempa — Because of my confidence.mp3" "Потерял себяСоциум (Remastered 2024).mp3" "наверное радость - Среди разрушенных панельных зданий.mp3" "CUPSIZE - Я проститутка.mp3" "305569.png" "CUPSIZE - печаль.mp3" "image-21.png" "курящих нет - Без тебя.mp3" "Rory in early 20s - Deuce Mushobaya.mp3" "Cold Carti(Lossless)/" "Flawed Mangoes - Dramamine (Visualizer).mp3" "сниппет привет.mp3" "курящих нет - Звезда.mp3" "Где Фантом - Рельсы.mp3" "image-9.png" ".stfolder/" "znak-vtorichnoi-pererabotki-syrya-02.jpg" "Мы слепые - тривиальный.mp3" "Duster_-_In_Dreams.jpg" "БИ-2 - Она.mp3" "image-20.png" "Morgenshtern - ПУСТОЙ ВОКЗАЛ.mp3" "курящих нет - КАЖЕТСЯ ЭТО КОНЕЦ.mp3" "курящих нет - УСТАЛ.mp3" "2006570.jpg" "я не смогу тебя забыть - babypills.mp3" "Screenshot_2025-01-08-00-19-21-684_com.instagram.android-edit.jpg" "wallpaperflare.com_wallpaper (1).jpg" "Miraidempa — Kesou.mp3" "CUPSIZE - Пьяные.mp3" "Море Ясности - Корабль в бутылке.mp3" "lyrics/" "XIUS LIИK  ÇhoymeИ [nøher Msk].mp3" "Miraidempa — Sayonara Cross Teck.mp3" "image-10.png" "SPOILER_image-1.png" "aaaaaaaaaaaaa.png" "номер скрыт — карта памяти.mp3" "номер скрыт - самый благополучный штат.mp3" "курящих нет - Падал мокрый снег на твои ресницы.mp3" "wallpaperflare.com_wallpaper.jpg" "Sink Saiko - self harm.mp3" "cool_file.jpg" "disappearing until i feel better [r7Dz_NfmnY0].mp3" "image-8.png" "номер скрыт — берег.mp3" "Miraidempa — Dayvigo.mp3" "CUPSIZE - Юра, Юра.mp3" "Miraidempa — Pain Language.mp3" "номер скрыт — далеко.mp3" "номер скрыт — сады.mp3" "CUPSIZE(Lossless)/" "images.png" "Разбей лицо.mp3" "Би-2 - Медленная Звезда.mp3" "colemak.png" "Sibewest, Asenssia - Лабиринт.mp3" "Flawed Mangoes - Fragility.mp3" "image-3.png" "hollow smile..mp3" "image-28.png" "номер скрыт — вальс.mp3" "Не убивая тебя — kyNZai.mp3" "Miraidempa — Unslept.mp3" "Наши с тобой выдумки - тривиальный.mp3" "Какая разница, zhanulka - тройка мечей.mp3" "5opka, MellSher - Жми Share.mp3" "image-6.png" "The Autocollants - Apple Vines.mp3" "номер скрыт - пластик.mp3" "1574496.jpg" "потные_бляди.mp3" "номер скрыт - в мире малой величины.mp3" "image-66.png" "курящих нет - 200.mp3" "номер скрыт — молодость.mp3" "номер скрыт - звук.mp3" "pngtree-prohibition-of-carrying-weapons-image_1472120.jpg" "галантерея(Lossless)/" "номер скрыт — прощальные.mp3" "image.png" "CUPSIZE - Я схожу с ума.mp3" "SPOILER_image.png" "dope17 - боль.mp3" "номер скрыт - на дне.mp3" "IMG_20251217_170207.jpg" "хейтспіч — це не сильно радикально_.mp3" "Канонада.mp3" "Miraidempa — Mentally Dead.mp3" "missing pieces of myself.mp3" "dssctveself - midnight lake.mp3" "Sink Saiko - the end of the world.mp3" "Виктор Цой - Спокойная ночь.mp3" "не панк - Пустота (zaycev.net).mp3" "Miraidempa — Woman's Cigarette.mp3" "номер скрыт - короткое северное лето.mp3" "Sink Saiko - give me some love.mp3" "курящих нет — Очнись.mp3" "Я в пьяных слезах.mp3" "кинопамять - Не больно.mp3" "hkmori - i wish i were asleep.mp3" "Miraidempa — Next.mp3" "Sizor - Свет из окна.mp3" "Doppler - Picayune Dreams Vol. 3.mp3" "номер скрыт - фонарики.mp3" "курящих нет - РОМАШКА.mp3" "курящих нет - ПУЛИ.mp3" "image-11.png" "Би-2 - Пора возвращаться домой (ft. Oxxxymiron) (1).mp3" "номер скрыт — неизвестная.mp3" "Ниче Не Хочу, Никого Не Люблю.mp3" "mzlff — 1212.mp3" "Heaven Pierce Her — War.mp3" "Где Фантом - Это так архаично.mp3" "mzlff - PHANTASMAGORIA(flac)/" "appliexe - Хрустальное небо.mp3" "IMG_20250922_113301.jpg" "курящих нет - Свекла.mp3" "Птицу ЕМЪ - Нумеро Уно.mp3" "image-1.png" "Izar - A Party To My Death.flac" "kew favorites.m3u" "image-2.png" "IMG_2700.jpg" "Где Фантом - Я Тебя Люблю.mp3" "Гражданская Оборона — Обосратся и не жить.mp3" "nash-narkoman-staly.jpg" "67374722_163678424796759_8474051177443491840_n-1.png" "image-5.png" "номер скрыт - любовники.mp3" "курящих нет - ОДИН.mp3" "снипет когда мне хорошо.mp3" "Rory in early 20s - Sore mo amaidesu ne.mp3" "kurffew - fine.mp3" "IMG_20250310_172159_459.jpg" "1.mp3" "IMG_0414.jpg" "image-25.png" "Виктор Цой - Спокойная ночь соло looped.mp3" "pluxurypurp - мнения.mp3" "Sink Saiko - your naturally.mp3" "номер скрыт - срывы.mp3" "error.log" "aqbjjx.flac" "CUPSIZE - переломай мои кости.mp3" "image-15.png" "bongo-cat-sticker-600x800.jpg" "На нас, на них.mp3" "Miraidempa — to right, to left.mp3" "pluxurypurp - coldsociety.mp3" "rn_image_picker_lib_temp_74a82865-ccfb-4b8e-8f8c-8d19e7de1975.jpg" "курящих нет - ЭТО ТАК ВСЕ КРУТО.mp3" "Miraidempa — Cloudy mind.mp3" "mozhe_tantspol.jpg" "курящих нет - Миша я больше не могу.mp3" "Sink Saiko - dusty and damaged.mp3" "курящих нет - По уши.mp3" "номер скрыт - 9 этажей.mp3" "дурной вкус - Думаешь ты.mp3" "ascii-art.png" "А ты.mp3" "Rory in early 20s - Da Da Is Tape To And U U U.mp3" "ea2FgQEAP9I.jpg" "курящих нет - Еду зайцем.mp3" "MellSher & 5opka - Мерси.mp3" "Where The Night Ends — Broosnica, VSN7.mp3" "Miraidempa — kimi.mp3" "Птицу ЕМЪ(Lossless)/" "KSB muzic — Деп.mp3" "img_0 (1).jpg" "Rory in early 20s - 幻影.mp3" "zhanulka(Lossless)/" "AyuGram/" "Duster(Lossless)/" "image-4.png" "IMG_20240806_125914_365.png" "thumb-1920-922606.png" "pluxurypurp - я теряю себя (feat. neastin).mp3" "номер скрыт - выйти из комнаты.mp3" "IMG_20241003_211504_654.png" "Dope17, Volhey - Пополам.mp3" "1695789755189070555.jpg" "cold carti - наверное(unrelease).mp3" "D181D0BAD0B8D0BDD18CD182D0B5-D181D18ED0B4D0B0-D0B2D0B0D188D183-D181D0B0D0BCD183D18E-D0BBD18ED0B1D0B8D0BCD183D18E-D0BCD0B5D0BC-D0BAD0B0D180D182D0B8D0BDD0BAD183-v0-cizsy6qnx4mf1.png" "IMG_20241013_232822_210.png" "курящих нет - Йорщ.mp3" "номер скрыт - отпустил, представляешь_.mp3" "Sink Saiko - fck.mp3" "номер скрыт — волны.mp3" "Miraidempa — Colony.mp3" "Sink Saiko, Moypuls0 - Even More.mp3" "TEEN, Sqaute - -7 (больно).mp3" "img_0.jpg" "2.mp3" "Teddybears - Punkrocker from 'Superman'.mp3" "Re-Zero-Kara-Hajimeru-Isekai-Seikatsu-anime-Rem-Re-Zero-anime-girls-1389525-wallhere.com.jpg" "The Jungle Witch.mp3" "kurffew - concussion.mp3" "Дедовский свитер - Огни.mp3" "Эхо - тривиальный, nikitatomato.mp3" "діти інженерів, хейтспіч — Органи місцевого самоврядування.mp3" "снипет я забывал.mp3" "Miraidempa — Sometani Shota.mp3" "image-18.png" "kurffew - i dont wna cry.mp3" "снипет мне это нравится.mp3" "номер скрыт - сколько хочешь.mp3" "IMG_20241013_075914_577.png" "номер скрыт - с парадного.mp3" "Morgenshtern - АНТИДЕПРЕССАНТЫ.mp3" "CUPSIZE - давай увидимся.mp3" "dope17-kvestar-metel-mp3.mp3" "Он - Чужой, Он – Плохой.mp3" "image-16.png" "Morgenshtern - КРАСНЫЙ ФЛАГ.mp3" "Смысла.net, курящих нет — Иду к тебе на днюху.mp3" "Субтитры - Словно лето - primemusic.zone.mp3" "cold carti - еще один рок_3(unrelease).mp3" "Rory in early 20s - Ws6lkdm.mp3" "IMG_6439.png.jpg" "VSN7,ΔXIUS LIИK - Outcast.mp3" "../" "./")
+
+ ("/home/domain/Programming/inspecting/fabric_mod_1.21.9/" (26938 25816 547785 863000) "src/" "build/" ".gradle/" "build.gradle" "gradle/" ".vscode/" ".gitignore" "settings.gradle" ".gitattributes" "../" "gradle.properties" "gradlew.bat" "gradlew" "LICENSE" "bin/" ".github/" "run/" "./")
+
+ ("/home/domain/Programming/inspecting/" (26938 23443 812245 551000) "golang/" "java/" "fabric_mod_1.21.9/" "gleam/" "../" "dlang/" "sip/" "carbon/" "./" "ada/")
+
+ ("/home/domain/music/Cold Carti(Lossless)/Cold Carti - всегда ненавидел быть слабым/" (26952 882 555710 161000) "4 - Cold Carti - в чём я виноват..flac" "10_Cold_Carti_я_понял_что_такое_грязь___заживут_.flac" "8_Cold_Carti_ты_никогда_не_будешь_один_.flac" "9_Cold_Carti_всегда_ненавидел_быть_слабым_.flac" "7_Cold_Carti_что_мне_нужно_сделать___счастливо_.flac" "../" "5 - Cold Carti - ничего невозможного..flac" "3 - Cold Carti - всё тебе радо..flac" "6 - Cold Carti - музыка или счастье..flac" "2 - Cold Carti - постоянно..flac" "./" "1 - Cold Carti - сейчас в себе..flac")
+
+ ("/home/domain/music/Cold Carti(Lossless)/" (26950 50667 435340 628000) "1 - Cold Carti - жизнь будет долгой..flac" "Cold Carti - тебе жаль это слышать/" "1 - Cold Carti - проводами..flac" "Cold Carti - тебе жаль это слышать, Ч. 2/" "1 - Cold Carti - скоро..flac" "1 - Cold Carti - вряд ли ты вывезешь..flac" "01 - cold carti - расходы.flac" "Cold Carti - Лето и одиночество/" "1 - Cold Carti - дом..flac" "1 - Cold Carti - говорил с тобой..flac" "1 - Cold Carti - Быть частью..flac" "../" "1 - Cold Carti - не говори мне..flac" "1 - кирюша неспал - всё именно так..flac" "1 - Cold Carti - болезнь..flac" "1_Cold_Carti_человеку_нужен_человек_.flac" "Cold Carti - моими глазами/" "1_Cold_Carti_больше_не_будет_грустно_.flac" "1 - Cold Carti - доброе утро..flac" "1 - Cold Carti - не хочу..flac" "1 - Cold Carti - я сохраню..flac" "Cold Carti - всегда ненавидел быть слабым/" "./" "1 - Cold Carti - Девочка-гильотина..flac")
+
+ ("/home/domain/music/.stfolder/" (26830 53482 804225 871000) "../" "syncthing-folder-1ee1c0.txt" "./")
+
+ ("/home/domain/.emacs.d/auto-save-list/" (26949 10164 230280 142000) "../" ".saves-14031-wuaii~" "./")
+
+ ("/home/domain/Programming/" (26944 39985 473939 604000) "personal/" "../" "pythonenv/" "nasilnik/" "huyna/" "devres/" "./" "inspecting/")
+
+ ("/home/" (26733 31404 274793 52000) "../" "domain/" "linuxbrew/" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

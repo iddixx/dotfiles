@@ -1,0 +1,45 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ 'nil
+)
+(setq url-cookie-secure-storage
+ '(("youtube.com"
+  [url-cookie "__Secure-ROLLOUT_TOKEN"
+	      "COvH4-DisJPmLBCA1unUttORAxiA1unUttORAw%3D%3D"
+	      "Sun, 21-Jun-2026 09:46:22 GMT" "/" "youtube.com" t])
+ ("www.wikipedia.org"
+  [url-cookie "WMF-Last-Access" "23-Dec-2025"
+	      "Sat, 24 Jan 2026 00:00:00 GMT" "/" "www.wikipedia.org"
+	      t]
+  [url-cookie "NetworkProbeLimit" "0.001"
+	      "Tue Dec 23 11:46:31 2025 GMT" "/" "www.wikipedia.org" t])
+ (".wikipedia.org"
+  [url-cookie "WMF-Last-Access-Global" "23-Dec-2025"
+	      "Sat, 24 Jan 2026 00:00:00 GMT" "/" ".wikipedia.org" t]
+  [url-cookie "WMF-Uniq"
+	      "YM7anPM6Z5wU-F22QAgO2ALSAAEBAFvdthsEiBWCUsRXStMIJz3lvMF0AWVXN0Uh"
+	      "Wed, 23 Dec 2026 00:00:00 GMT" "/" ".wikipedia.org" t])
+ ("ru.wikipedia.org"
+  [url-cookie "WMF-Last-Access" "23-Dec-2025"
+	      "Sat, 24 Jan 2026 00:00:00 GMT" "/" "ru.wikipedia.org" t]
+  [url-cookie "NetworkProbeLimit" "0.001"
+	      "Tue Dec 23 11:46:37 2025 GMT" "/" "ru.wikipedia.org" t])
+ (".youtube.com"
+  [url-cookie "__Secure-YNID"
+	      "14.YT=gRcRiG5SSmOxLLXqWg4Ff8O1x43GdzpJM-STjBZXPCOEsTzTbgVMzxgT86TlN0GtZ-Qj5WVY7goixl9HjR0v9YzSiRNFqDVMiLN3nFY-dT_lAqMeVNJIKAtUcJh3AcficLXvXvoeKcEJ-cR7tJnwewnTJLBDzL2CvPPNyZuNYnocVZzTBAuUGXdvNt2Q-FDzmB4c65HjCE_24etfmr-t3H2odoP1CQH7a_gZ9DKMpC6ag_rl0k50xGclSzg85IyDwa7ztx5awLntuIBvMFQTWhvd1bX5JqLa_ywW_CobfEXC7t2TCZWpttnnYUYY7mD3XRqznoGC1abdc_hPA-WidA"
+	      "Sun, 21-Jun-2026 09:46:22 GMT" "/" ".youtube.com" t]
+  [url-cookie "VISITOR_INFO1_LIVE" "6XyNk86eL4A"
+	      "Sun, 21-Jun-2026 09:46:22 GMT" "/" ".youtube.com" t]
+  [url-cookie "VISITOR_PRIVACY_METADATA" "CgJBWhIEGgAgWg%3D%3D"
+	      "Sun, 21-Jun-2026 09:46:22 GMT" "/" ".youtube.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
+;; End:
+
+;;; cookies ends here
