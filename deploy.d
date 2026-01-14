@@ -111,13 +111,13 @@ string[] list_dir(string dir, out string[] base_names, bool is_absolute_paths = 
    for example: if you link alacritty/ to the .config/,
    but it already has an alacritty directory,
    it will remove it before linking */
-void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true);
+void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true, bool verbose = false);
 
 /* links flatpaks to the `link_to` directory.
    if strip_names is true, it links flatpak with stripped name,
    for example: com.discordorg.Discord, becomes Discord.
    remove_conflicting  works the same as in `link_by_config`*/
-void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true);
+void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true, bool verbose = false);
 
 void main(string[] args)
 {
@@ -131,22 +131,24 @@ void main(string[] args)
     bool f_link_flatpaks = false;
     bool f_skip_conflicting = false;
     bool f_only_link_flatpaks = false;
+    bool f_verbose = false;
 
     auto flags = getopt(args,
-            "link-flatpaks", &f_link_flatpaks
-            ,"only-link-flatpaks", &f_only_link_flatpaks
-            ,"skip-conflicting", &f_skip_conflicting
+            "link-flatpaks|f", &f_link_flatpaks
+            ,"only-link-flatpaks|o", &f_only_link_flatpaks
+            ,"skip-conflicting|s", &f_skip_conflicting
+            ,"verbose|v", &f_verbose
             );
 
     if(f_link_flatpaks || f_only_link_flatpaks)
     {
         string bin_dir = buildNormalizedPath(home_dir, ".local", "bin");
-        link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting);
+        link_flatpaks(bin_dir, ParameterDefaults!link_flatpaks[1], !f_skip_conflicting, f_verbose);
         if(f_only_link_flatpaks)
             return;
     }
 
-    link_by_config(get_config(), ParameterDefaults!link_by_config[1], !f_skip_conflicting);
+    link_by_config(get_config(), ParameterDefaults!link_by_config[1], !f_skip_conflicting, f_verbose);
 
     // --------NOT TESTED --------//
     string blesh = buildNormalizedPath(home_dir ~ "/.local/share/blesh/ble.sh");
@@ -165,7 +167,7 @@ void main(string[] args)
 
 }
 
-void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true)
+void link_by_config(conf_s config, string from = ".", bool remove_conflicting = true, bool verbose = false)
 {
     string[] base_entry_names;
     string[] entries = list_dir(from, base_entry_names);
@@ -189,6 +191,14 @@ void link_by_config(conf_s config, string from = ".", bool remove_conflicting = 
 
             if(exists(destination))
             {
+                if(isSymlink(destination))
+                {
+                    if(readLink(destination) == current_entry) 
+                    {
+                        if(verbose) writeln("[INFO]: " ~ entries[i] ~ " is already linked, skipping");
+                        continue;
+                    }
+                }
                 if(remove_conflicting)
                 {
                     // hardcoded
@@ -223,7 +233,7 @@ string flatpak_name_strip(string name)
     return result[result.length-1];
 }
 
-void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true)
+void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflicting = true, bool verbose = false)
 {
     if(!exists(link_to) || !isDir(link_to))
         return;
@@ -249,16 +259,25 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
                 name = flatpak_name_strip(name);
 
             string destination = buildNormalizedPath(link_to, name);
-
-            if(remove_conflicting)
+            if(exists(destination))
             {
-                if(exists(destination))
+                if(isSymlink(destination))
+                {
+                    if(readLink(destination) == absolute_entry)
+                    {
+                        if(verbose) writeln("[INFO]: " ~ absolute_entry ~ " is already linked, skipping");
+                        continue;
+                    }
+                }
+                if(remove_conflicting)
+                {
                     executeShell("rm -rf " ~ destination);
-            }
-            else
-            {
-                writeln("[INFO]: remove-conflicting is false, skipping " ~ absolute_entry);
-                continue;
+                }
+                else
+                {
+                    writeln("[INFO]: remove-conflicting is false, skipping " ~ absolute_entry);
+                    continue;
+                }
             }
 
             try
