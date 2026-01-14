@@ -7,6 +7,7 @@
   ,"rpc.lowerDetailsViewing": "Eyeballing {file_name}"
   ,"rpc.lowerDetailsNotFound": "untitled folder"
   ,"rpc.workspaceElapsedTime": false
+  ,"rpc.enabled": true
   ,"diagnostic.enable": true
   ,"clangd.arguments": ["--background-index"]
   ,"clangd.fallbackFlags": [ "-std=c++23" ]
