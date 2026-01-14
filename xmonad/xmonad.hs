@@ -138,10 +138,8 @@ myConfig = def {
     , X.manageHook = myManageHook X.<+> X.manageHook def
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
-                             -- X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/ascii/16_10/" >>
-                             X.spawn "nitrogen --set-zoom-fill --random $HOME/dotfiles/bgs/digged_16_10.png" >>
-                             -- X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/ramxmonad_yuki-neh1610.png" >>
                              X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh_ortho,diktor,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
+                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/plotnishek_tohru1610_ascii.png" >>
                              X.spawn "copyq &" >>
                              X.spawn "picom &" -- >>
                              -- X.spawn "flameshot &"
