@@ -1,7 +1,7 @@
 import XMonad.Layout.FocusTracking
 import XMonad.StackSet qualified as W
 import Data.Map qualified as M
-import XMonad.Util.EZConfig ( mkKeymap )
+import XMonad.Util.EZConfig ( mkKeymap, removeKeysP )
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog -- ( xmobar, def, ppOutput, ppTitle ) 
 import XMonad.Hooks.ManageHelpers
@@ -24,7 +24,7 @@ import XMonad.Util.ClickableWorkspaces
 
 main :: IO ()
 main = do 
-    X.xmonad . ewmh . withEasySB (statusBarProp "xmobar" (clickablePP myXmobarPP)) toggleStrutsKey $ myConfig
+    X.xmonad . ewmh . withEasySB (statusBarProp "xmobar" (clickablePP myXmobarPP)) toggleStrutsKey $ myConfig `removeKeysP` ["M-z"]
     where 
         toggleStrutsKey :: X.XConfig X.Layout -> (X.KeyMask, X.KeySym)
         toggleStrutsKey X.XConfig{ X.modMask = m } = (m, X.xK_Tab)
@@ -138,7 +138,7 @@ myConfig = def {
     , X.manageHook = myManageHook X.<+> X.manageHook def
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
-                             X.spawn "sleep 1 && setxkbmap us,ru,ua -variant colemak_dh_ortho,diktor,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
+                             X.spawn "sleep 1 && setxkbmap us,diktor,ua -variant colemak_dh_ortho,,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
                              X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/plotnishek_tohru1610_ascii.png" >>
                              X.spawn "copyq &" >>
                              X.spawn "picom &" -- >>
