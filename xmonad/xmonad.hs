@@ -24,7 +24,7 @@ import XMonad.Util.ClickableWorkspaces
 
 main :: IO ()
 main = do 
-    X.xmonad . ewmh . withEasySB (statusBarProp "xmobar" (clickablePP myXmobarPP)) toggleStrutsKey $ myConfig `removeKeysP` ["M-z"]
+    X.xmonad . ewmh . withEasySB (statusBarProp "xmobar" (clickablePP myXmobarPP)) toggleStrutsKey $ myConfig
     where 
         toggleStrutsKey :: X.XConfig X.Layout -> (X.KeyMask, X.KeySym)
         toggleStrutsKey X.XConfig{ X.modMask = m } = (m, X.xK_Tab)
