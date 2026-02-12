@@ -141,7 +141,8 @@ myConfig = def {
                              X.spawn "sleep 1 && setxkbmap us,diktor,ua -variant colemak_dh_ortho,,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
                              X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/plotnishek_tohru1610_ascii.png" >>
                              X.spawn "copyq &" >>
-                             X.spawn "picom &" -- >>
+                             X.spawn "picom &" >>
+                             X.spawn "emacs --daemon &" -- >>
                              -- X.spawn "flameshot &"
     , X.workspaces         = myWorkspaces
     , X.layoutHook         = smartBorders ( focusTracking $ tabbed shrinkText myTabTheme X.||| X.Full X.||| ResizableTall 1 (3/100) (1/2)[])
