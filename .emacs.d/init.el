@@ -86,6 +86,9 @@
 ;; PACKAGES ;;
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; eat terminal
+(setq eat-default-shell "/usr/bin/env bash")
+
 ;; simple c mode
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
@@ -108,6 +111,7 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook))
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 
 (setq dashboard-banner-logo-title "")
 (setq dashboard-startup-banner "~/.emacs.d/menhera_chan_sticker.gif")
@@ -143,6 +147,8 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -151,7 +157,8 @@
  '(emms-mode-line-cycle-velocity 1)
  '(emms-volume-change-function 'emms-volume-mpv-change)
  '(package-selected-packages
-   '(d-mode dashboard elcord emms emms-info-mediainfo
-	        emms-mode-line-cycle emms-player-simple-mpv emms-state
-	        lsp-java lyrics-fetcher magit pass password-store surround)))
+   '(d-mode dashboard eat elcord emms emms-info-mediainfo
+            emms-mode-line-cycle emms-player-simple-mpv emms-state
+            lsp-java lyrics-fetcher magit pass password-store surround)))
 
+(put 'emms-browser-delete-files 'disabled nil)

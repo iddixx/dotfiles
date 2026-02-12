@@ -47,6 +47,7 @@ fi
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
     xterm-kitty) color_prompt=yes;;
+    eat-truecolor) color_prompt=yes;;
 esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -132,3 +133,7 @@ export PATH=/home/domain/.nimble/bin:$PATH
 
 [ -f "/home/domain/.ghcup/env" ] && . "/home/domain/.ghcup/env" # ghcup-env
 source -- ~/.local/share/blesh/ble.sh
+
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+  source "$EAT_SHELL_INTEGRATION_DIR/bash"
+
