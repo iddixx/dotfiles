@@ -139,7 +139,7 @@ myConfig = def {
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
                              X.spawn "sleep 1 && setxkbmap us,diktor,ua -variant colemak_dh_ortho,,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
-                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/ascii/16_10/plotnishek_tohru1610_ascii.png" >>
+                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/f_ck_linux.jpg" >>
                              X.spawn "copyq &" >>
                              X.spawn "picom &" >>
                              X.spawn "emacs --daemon &" -- >>
@@ -170,7 +170,7 @@ myKeys = [
   , ("M-r",                    X.spawn "$HOME/dotfiles/run_dmenu.d --theme xmonad") 
   , ("M-m", customShellPrompt myPromptConfig)
   , ("M-C-m", copyShellPrompt myCopyPromptConfig)
-  , ("M-t",                    X.spawn "kitty")
+  , ("M-t",                    X.spawn "$HOME/.local/bin/eat")
   , ("M-<Backspace>",          X.kill)
   , ("M-S-<Backspace>",        X.withFocused forceKillWindow)
   , ("M-S-q",                  X.spawn "pkill xmonad")
@@ -203,7 +203,9 @@ myKeys = [
   , ("M-C-n",                  X.sendMessage X.Shrink)
   , ("M-C-i",                  X.sendMessage X.Expand)
   , ("M-f",                    X.withFocused toggleFloat)
-  , ("M-S-r",                  X.spawn "pkill stalonetray" >> X.spawn restart_command) ]
+  , ("M-S-r",                  X.spawn "pkill stalonetray" >>
+                               X.spawn "emacsclient -e \"(save-buffers-kill-emacs)\"" >>
+                               X.spawn restart_command) ]
   where 
         restart_command = "if type xmonad; then xmonad --recompile && xmonad --restart;" ++
           " else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
