@@ -1,5 +1,5 @@
 > [!WARNING]
-> Do not send any pull requests or/and issues.
+> Do not send any pull requests or issues.
 > My dotfiles supposed to work **ONLY** on my machine.
 > If it doesn't work on yours, clone/fork it, and fix it yourself.
 
