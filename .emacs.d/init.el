@@ -86,8 +86,15 @@
 ;; PACKAGES ;;
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; incdec number undercursor
+(require 'incdec)
+(global-set-key (kbd "C-c +") #'increment-number-at-point)
+(global-set-key (kbd "C-c =") #'increment-number-at-point)
+(global-set-key (kbd "C-c -") #'decrement-number-at-point)
+
 ;; eat terminal
 (setq eat-default-shell "/usr/bin/env bash")
+(add-hook 'eat-mode-hook #'eat-char-mode)
 
 ;; simple c mode
 (require 'simpc-mode)
@@ -159,6 +166,7 @@
  '(package-selected-packages
    '(d-mode dashboard eat elcord emms emms-info-mediainfo
             emms-mode-line-cycle emms-player-simple-mpv emms-state
-            lsp-java lyrics-fetcher magit pass password-store surround)))
+            haskell-emacs haskell-mode lsp-haskell lsp-java
+            lyrics-fetcher magit pass password-store surround)))
 
 (put 'emms-browser-delete-files 'disabled nil)
