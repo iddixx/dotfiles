@@ -132,7 +132,6 @@
 (setq lyrics-fetcher-lyrics-folder (file-truename "~/music/lyrics/"))
 (require 'emms-setup)
 (require 'emms-info-mediainfo)
-(require 'emms-mode-line-cycle)
 (emms-all)
 (emms-default-players)
 (emms-mpris-enable)
@@ -142,13 +141,17 @@
 				                    emms-info-ogginfo
 				                    emms-info-cueinfo
 				                    emms-info-mediainfo))
+
+(require 'emms-mode-line-cycle)
+(emms-mode-line 1)
+(emms-playing-time 1)
 (emms-mode-line-cycle 1)
 (setq emms-mode-line-cycle-max-width 24)
+
 (setq emms-player-mpv-parameters '("--quiet" "--really-quiet" "--no-config" "--force-window=no" "--audio-display=no" "--audio-device=pipewire"))
-(setq emms-browser-covers 'emms-browser-cache-thumbnail-async)
 (emms-add-directory-tree (file-truename "~/music/"))
 (emms-add-directory (file-truename "~/music/"))
-(emms-playlist-current-clear) ;; i wanna keep my playlist empty
+(emms-playlist-current-clear)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -161,12 +164,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(emms-mode-line-cycle-use-icon-p nil)
  '(emms-mode-line-cycle-velocity 1)
  '(emms-volume-change-function 'emms-volume-mpv-change)
  '(package-selected-packages
    '(d-mode dashboard eat elcord emms emms-info-mediainfo
             emms-mode-line-cycle emms-player-simple-mpv emms-state
             haskell-emacs haskell-mode lsp-haskell lsp-java
-            lyrics-fetcher magit pass password-store surround)))
+            lyrics-fetcher magit nov pass password-store surround)))
 
 (put 'emms-browser-delete-files 'disabled nil)
