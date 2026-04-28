@@ -139,7 +139,7 @@ myConfig = def {
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
                              X.spawn "sleep 1 && setxkbmap us,diktor,ua -variant colemak_dh_ortho,,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
-                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/f_ck_linux.jpg" >>
+                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/menhera_irl.png" >>
                              X.spawn "copyq &" >>
                              X.spawn "picom &" >>
                              X.spawn "emacs --daemon &" -- >>
