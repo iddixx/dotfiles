@@ -8,3 +8,6 @@ copyq/copyq.lock
 kew/*
 !kew/kewrc
 *~
+.emacs.d/recentf
+.emacs.d/emms/cache
+.emacs.d/url/cookies
