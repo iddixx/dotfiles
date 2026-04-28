@@ -205,6 +205,7 @@ myKeys = [
   , ("M-f",                    X.withFocused toggleFloat)
   , ("M-S-r",                  X.spawn "pkill stalonetray" >>
                                X.spawn restart_command)
+  , ("M-C-r",                  X.spawn "emacsclient -e \"(save-buffers-kill-emacs)\"; emacs --daemon &")]
   where 
         restart_command = "if type xmonad; then xmonad --recompile && xmonad --restart;" ++
           " else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
