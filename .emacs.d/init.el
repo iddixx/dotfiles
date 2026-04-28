@@ -48,12 +48,6 @@
      (save-excursion (beginning-of-line) (point))
      (save-excursion (beginning-of-line (1+ arg)) (point)))))
 
-(defun delete-region-or-char ()
-  (interactive)
-  (if (use-region-p)
-      (delete-region (region-beginning) (region-end))
-    (delete-char 1)))
-
 (defun kill-ring-save-region ()
   (interactive "r")
   (kill-ring-save))
@@ -69,10 +63,9 @@
 (defalias 'dw 'delete-window)
 
 ;; BINDINGS ;;
-(global-unset-key (kbd "C-d"))
+(delete-selection-mode 1)
 (global-unset-key (kbd "C-S-d"))
 (global-unset-key (kbd "C-S-k"))
-(global-set-key (kbd "C-d") 'delete-region-or-char)
 (global-set-key (kbd "C-S-d") 'delete-whole-line)
 (global-set-key (kbd "C-S-k") 'kill-whole-line)
 (defun my-java-mode-hook-setup ()
