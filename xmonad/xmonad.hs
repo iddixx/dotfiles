@@ -33,7 +33,7 @@ myXmobarPP :: PP
 myXmobarPP = def
     { ppSep             = gray " | "
     , ppTitleSanitize   = xmobarStrip
-    , ppCurrent         = blue . wrap " " "" . xmobarBorder "Bottom" "#6881b5" 2
+    , ppCurrent         = blue . wrap " " "" . xmobarBorder "Bottom" "#a0d9ed" 2
     , ppHidden          = white . wrap " " ""
     , ppHiddenNoWindows = gray . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
@@ -46,18 +46,18 @@ myXmobarPP = def
 
     gray, blue, red, white, yellow :: String -> String
     gray     = xmobarColor "#636363" ""
-    blue     = xmobarColor "#6881b5" ""
+    blue     = xmobarColor "#a0d9ed" ""
     white    = xmobarColor "#f8f8f2" ""
     yellow   = xmobarColor "#f1fa8c" ""
     red      = xmobarColor "#ff5555" ""
 
 myTabTheme = def {
             activeColor         = "#000000"  
-          , activeBorderColor   = "#6881b5"  
+          , activeBorderColor   = "#a0d9ed"  
           , inactiveColor       = "#000000"  
           , inactiveBorderColor = "#636363"
 
-          , activeTextColor     = "#6881b5"  
+          , activeTextColor     = "#a0d9ed"  
           , inactiveTextColor   = "#636363"  
           , urgentTextColor     = "#FF0000"
           , fontName            = "xft:Iosevka Fixed SS14:size=13"
@@ -131,7 +131,7 @@ myConfig = def {
       X.terminal           = "kitty"
     , X.borderWidth        = 3
     , X.normalBorderColor  = "#000000"
-    , X.focusedBorderColor = "#6881b5"
+    , X.focusedBorderColor = "#678d9a"
     , X.keys               = flip mkKeymap myKeys
     , X.modMask            = X.mod4Mask
     , X.focusFollowsMouse  = False
@@ -139,7 +139,7 @@ myConfig = def {
     , X.startupHook        = X.spawn "stalonetray &" >> 
                              X.spawn "unclutter --timeout 1 --hide-on-touch --ignore-scrolling --fork &" >>
                              X.spawn "sleep 1 && setxkbmap us,diktor,ua -variant colemak_dh_ortho,,diktor -option grp:ctrls_toggle -option caps:capslock && redshift -x && redshift -O 4500 && xset dpms 0 0 0 && xset s noblank && xset s off" >> 
-                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/menhera_irl.png" >>
+                             X.spawn "nitrogen --set-zoom-fill $HOME/dotfiles/bgs/abmayo_miku.jpeg" >>
                              X.spawn "copyq &" >>
                              X.spawn "picom &" >>
                              X.spawn "emacs --daemon &" -- >>
