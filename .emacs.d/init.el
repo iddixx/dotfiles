@@ -28,6 +28,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background "#000000"))))
+ '(Man-overstrike ((t (:inherit bold :foreground "chartreuse"))))
+ '(Man-underline ((t (:inherit underline :foreground "sky blue"))))
  '(fringe ((t (:background "#000000"))))
  '(mode-line ((t (:background "#202020" :foreground "#FFFFFF"))))
  '(mode-line-inactive ((t (:background "#101010" :foreground "#A0A0A0"))))
@@ -69,7 +71,6 @@
 (global-set-key (kbd "C-S-d") 'delete-whole-line)
 (global-set-key (kbd "C-S-k") 'kill-whole-line)
 (defun my-java-mode-hook-setup ()
-  (define-key java-mode-map (kbd "C-d") 'delete-region-or-char)
   (define-key java-mode-map (kbd "C-S-d") 'delete-whole-line)
   (define-key java-mode-map (kbd "C-S-k") 'kill-whole-line))
 
@@ -157,13 +158,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(Man-notify-method 'bully)
  '(emms-mode-line-cycle-use-icon-p nil)
  '(emms-mode-line-cycle-velocity 1)
  '(emms-volume-change-function 'emms-volume-mpv-change)
  '(package-selected-packages
    '(d-mode dashboard eat elcord emms emms-info-mediainfo
             emms-mode-line-cycle emms-player-simple-mpv emms-state
-            haskell-emacs haskell-mode lsp-haskell lsp-java
-            lyrics-fetcher magit nov pass password-store surround)))
+            haskell-emacs haskell-mode hide-mode-line lsp-haskell
+            lsp-java lyrics-fetcher magit man-commands nim-mode nov
+            pass password-store surround vimrc-mode)))
 
 (put 'emms-browser-delete-files 'disabled nil)
