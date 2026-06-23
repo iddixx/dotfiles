@@ -1,5 +1,4 @@
 (setq warning-minimum-level :error)
-(load-theme 'wombat)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -159,6 +158,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(Man-notify-method 'bully)
+ '(custom-safe-themes
+   '("9e0798a991e7913a47ba7a480953787f67a6d01c29bbcaeee213e20a38daf270"
+     default))
  '(emms-mode-line-cycle-use-icon-p nil)
  '(emms-mode-line-cycle-velocity 1)
  '(emms-volume-change-function 'emms-volume-mpv-change)
@@ -167,6 +169,8 @@
             emms-mode-line-cycle emms-player-simple-mpv emms-state
             haskell-emacs haskell-mode hide-mode-line lsp-haskell
             lsp-java lyrics-fetcher magit man-commands nim-mode nov
-            pass password-store surround vimrc-mode)))
+            pass password-store phoenix-dark-pink-theme surround
+            vimrc-mode)))
 
 (put 'emms-browser-delete-files 'disabled nil)
+(load-theme 'phoenix-dark-pink) 
