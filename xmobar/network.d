@@ -36,7 +36,7 @@ void main()
             if (fields.length >= 9)
             {
                 essid = fields[2];
-                signal = fields[6];
+                signal = fields[7];
                 rate =  fields[5];
             }
             found_connected = true;
