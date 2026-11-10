@@ -176,4 +176,5 @@
             surround vimrc-mode)))
 
 (put 'emms-browser-delete-files 'disabled nil)
-(load-theme 'phoenix-dark-pink) 
+(load-theme 'phoenix-dark-pink)
+(set-foreground-color "#e0e0e0") ;; sometimes it makes font black
