@@ -287,8 +287,15 @@ void link_flatpaks(string link_to, bool strip_names = true, bool remove_conflict
             }
             catch(FileException error)
             {
-                stderr.writeln(error.msg);
-                exit(1);
+                if(error.msg.endsWith("No such file or directory"))
+                {
+                    writeln(error.msg);
+                }
+                else
+                {
+                    stderr.writeln(error.msg);
+                    exit(1);
+                }
             }
         }
     }
