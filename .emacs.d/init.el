@@ -101,6 +101,9 @@
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)
 
+;; rust support
+(add-hook 'rust-mode-hook 'lsp-deferred)
+
 ;; surround, like vim-surround
 (use-package surround
   :ensure t
@@ -169,8 +172,8 @@
             emms-mode-line-cycle emms-player-simple-mpv emms-state
             haskell-emacs haskell-mode hide-mode-line lsp-haskell
             lsp-java lyrics-fetcher magit man-commands nim-mode nov
-            pass password-store phoenix-dark-pink-theme surround
-            vimrc-mode)))
+            pass password-store phoenix-dark-pink-theme rust-mode
+            surround vimrc-mode)))
 
 (put 'emms-browser-delete-files 'disabled nil)
 (load-theme 'phoenix-dark-pink) 
