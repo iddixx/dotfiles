@@ -148,7 +148,7 @@ void main(string[] args)
             return;
     }
 
-    link_by_config(get_config(), ParameterDefaults!link_by_config[1], !f_skip_conflicting, f_verbose);
+    link_by_config(get_config(), __FILE_FULL_PATH__.dirName, !f_skip_conflicting, f_verbose);
 
     // --------NOT TESTED --------//
     string blesh = buildNormalizedPath(home_dir ~ "/.local/share/blesh/ble.sh");
@@ -308,12 +308,11 @@ string[] list_dir(string dir_name, out string[] base_entries, bool is_absolute_p
     string[] result;
     foreach(name; base_names)
     {
-        // TODO: make relative and absolute paths, work outside of dotfiles directory
-        auto relative_entry_name = "." ~ dirSeparator ~ name;
+        auto relative_entry_name = buildPath(dir_name, name);
         if(!is_absolute_paths)
             result[result.length++] = relative_entry_name; 
         else
-            result[result.length++] = buildNormalizedPath(absolutePath(relative_entry_name), dir_name);
+            result[result.length++] = buildNormalizedPath(absolutePath(relative_entry_name));
     }
     return result;
 }
